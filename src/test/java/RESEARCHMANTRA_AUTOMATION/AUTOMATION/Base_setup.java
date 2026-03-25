@@ -96,13 +96,14 @@ public class Base_setup {
                     .setFullReset(true) 
                     .setNewCommandTimeout(Duration.ofSeconds(3600));
 
-            // PERFORMANCE CONFIGURATIONS (Safe for Flutter)
+            // PERFORMANCE & SPEED CONFIGURATIONS
             options.setCapability("appium:disableWindowAnimation", true);
             options.setCapability("appium:skipServerInstallation", false);
+            options.setCapability("appium:disableAndroidWatchers", true); // 🚀 SPEED HACK: Disables background lag
 
             if (prop.getProperty("app.path") != null) options.setApp(prop.getProperty("app.path"));
 
-            Reporter.log("\n⏳ APPIUM IS CLEANING DEVICE AND INSTALLING FRESH APK...", true);
+          //  Reporter.log("\n⏳ APPIUM IS CLEANING DEVICE AND INSTALLING FRESH APK...", true);
             driver.set(new AndroidDriver(new URL(prop.getProperty("appium.server.url")), options));
             
             // 🚀 STABILITY RESTORED: Standard 15-second implicit wait allows the app to breathe
@@ -139,17 +140,17 @@ public class Base_setup {
     }
 
     @AfterSuite
-    public void tearDownSuite() {
-        if (getDriver() != null) {
-            try {
-                getDriver().removeApp(prop.getProperty("app.package"));
-            } catch (Exception e) {
-                // Ignore if app already removed
-            }
-            getDriver().quit();
-        }
-        extent.flush();
-    }
+//    public void tearDownSuite() {
+//        if (getDriver() != null) {
+//            try {
+//                getDriver().removeApp(prop.getProperty("app.package"));
+//            } catch (Exception e) {
+//                // Ignore if app already removed
+//            }
+//            getDriver().quit();
+//        }
+//        extent.flush();
+//    }
 
     public void logStep(Status status, String message) {
         Reporter.log("  -> " + message, true); 
@@ -175,14 +176,20 @@ public class Base_setup {
 
     public void handlePromoPopup() {
         try {
+            // 🚀 SPEED HACK: Drop wait to ZERO to check instantly. Prevents 15-second hang if popup isn't there!
+            getDriver().manage().timeouts().implicitlyWait(Duration.ZERO);
             List<WebElement> gift = getDriver().findElements(AppiumBy.xpath("//*[contains(@content-desc, 'Gift') or contains(@content-desc, 'ACTIVATE')]"));
+            
             if (!gift.isEmpty()) {
                 logStep(Status.WARNING, "🎁 Gift Popup Blocked the UI! Clicking ACTIVATE...");
                 gift.get(0).click();
-                new WebDriverWait(getDriver(), Duration.ofSeconds(3))
-                    .until(ExpectedConditions.invisibilityOfAllElements(gift));
+                new WebDriverWait(getDriver(), Duration.ofSeconds(3)).until(ExpectedConditions.invisibilityOfAllElements(gift));
             }
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        } finally {
+            // Restore normal implicit wait instantly
+            getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        }
     }
 
     public void verifyToastMessage(String expectedText) {
@@ -200,27 +207,40 @@ public class Base_setup {
 
     public void returnToDashboardSafe() {
         dismissSystemNotifications(); 
-        handlePromoPopup();           
+        handlePromoPopup();            
         
         try {
-            boolean home = !getDriver().findElements(AppiumBy.xpath("//*[contains(@content-desc, 'Explore Now')]")).isEmpty();
-            if (home) { Reporter.log("  -> ✅ Already on Home Dashboard.", true); return; }
-            
-            new WebDriverWait(getDriver(), Duration.ofSeconds(3))
-                .until(ExpectedConditions.elementToBeClickable(AppiumBy.accessibilityId("Explore"))).click();
-        } catch (Exception e) {
-            for (int i = 0; i < 3; i++) {
-                try {
-                    getDriver().navigate().back();
-                    Thread.sleep(800);
-                    if (!getDriver().findElements(AppiumBy.accessibilityId("Explore")).isEmpty()) {
-                        getDriver().findElement(AppiumBy.accessibilityId("Explore")).click();
-                        break;
-                    }
-                } catch (Exception ex) {}
+            // Check if we are already there instantly
+            getDriver().manage().timeouts().implicitlyWait(Duration.ofMillis(0));
+            if (!getDriver().findElements(AppiumBy.accessibilityId("Explore")).isEmpty()) {
+                WebElement explore = getDriver().findElement(AppiumBy.accessibilityId("Explore"));
+                if (explore.isSelected() || !getDriver().findElements(AppiumBy.xpath("//*[contains(@content-desc, 'Explore Now')]")).isEmpty()) {
+                    getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+                    return; 
+                }
+                explore.click();
+                getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+                return;
             }
+            getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        } catch (Exception e) {
+            getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        }
+        
+        // Aggressive recovery: Hit back up to 5 times and try to find the 'Explore' tab
+        for (int i = 0; i < 5; i++) {
+            try {
+                getDriver().navigate().back();
+                WebDriverWait shortWait = new WebDriverWait(getDriver(), Duration.ofSeconds(2));
+                shortWait.pollingEvery(Duration.ofMillis(100));
+                WebElement exploreTab = shortWait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("Explore")));
+                exploreTab.click();
+                return;
+            } catch (Exception ex) {}
         }
     }
+            
+          
 
     public void scrollToElementByContentDesc(String contentDesc) {
         try {

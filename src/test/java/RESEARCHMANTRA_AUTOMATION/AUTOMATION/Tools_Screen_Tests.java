@@ -1,20 +1,30 @@
 package RESEARCHMANTRA_AUTOMATION.AUTOMATION;
 
 import java.time.Duration;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import com.aventstack.extentreports.Status;
+
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 
 public class Tools_Screen_Tests extends Base_setup {
 
     @Test(priority = 5, description = "Verify Tools Tab UI and Open All Calculators (TC-075 to TC-085)")
     public void testToolsScreenFlow() {
         test = extent.createTest("Tools & Calculators Verification - User: " + Base_setup.testFullName);
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        AndroidDriver driver = getDriver();
+        
+        // 🚀 SPEED HACK: Fast polling for instant UI reactions
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(12));
+        wait.pollingEvery(Duration.ofMillis(100));
 
         logStep(Status.INFO, "Starting Tools Screen Verification.");
 
@@ -22,13 +32,13 @@ public class Tools_Screen_Tests extends Base_setup {
             "Retirement Plans",
             "SIP Calculator",
             "Risk Reward Calculator",
-            "Car Loan Full payment",
-            "GST Savings calculator",
-            "Home Loan Repayment",
-            "Sukanya samriddhi Yojana",
-            "Lumpsum Calculator",
+            "Car Loan", // Shortened from "Car Loan Full payment" to bypass Flutter text wrapping
+            "GST Savings", 
+            "Home Loan", 
+            "Sukanya samriddhi", 
+            "Lumpsum", 
             "CAGR Calculator",
-            "Salary Budget Calculator"
+            "Salary Budget"
         };
 
         try {
@@ -36,10 +46,11 @@ public class Tools_Screen_Tests extends Base_setup {
             // 1. Navigate to Tools Tab (High Speed)
             // ==========================================
             logStep(Status.INFO, "Navigating to Tools Tab.");
-            wait.until(ExpectedConditions.elementToBeClickable(AppiumBy.accessibilityId("Tools"))).click();
+            safeClick(driver, AppiumBy.xpath("//android.view.View[@content-desc='Tools']"));
+            handlePromoPopup();
             
-            // 🚀 SMART WAIT: Wait exactly for the first calculator to render instead of sleeping
-            wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("Retirement Plans")));
+            // 🚀 SMART WAIT: Wait using flexible 'contains' xpath to bypass hidden Flutter characters
+            wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.xpath("//*[contains(@content-desc, 'Retirement Plans')]")));
             logStep(Status.PASS, "Successfully opened Tools Screen instantly.");
 
             // ==========================================
@@ -49,26 +60,29 @@ public class Tools_Screen_Tests extends Base_setup {
 
             for (String calcName : calculators) {
                 try {
-                    scrollToElementByContentDesc(calcName);
+                    // Scroll into view safely
+                    try {
+                        driver.findElement(AppiumBy.androidUIAutomator(
+                            "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().descriptionContains(\"" + calcName + "\"));"));
+                    } catch (Exception e) {}
                     
-                    WebElement calcCard = wait.until(ExpectedConditions.elementToBeClickable(AppiumBy.accessibilityId(calcName)));
-                    calcCard.click();
+                    // 🚀 HUMAN TAP: Click the calculator card
+                    safeClick(driver, AppiumBy.xpath("//*[contains(@content-desc, '" + calcName + "')]"));
                     
-                    // 🚀 SMART WAIT: Since every calculator has input boxes, wait for an EditText to prove it loaded!
+                    // 🚀 SMART WAIT: Every calculator has input boxes, wait for EditText to prove it loaded!
                     wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.className("android.widget.EditText")));
                     logStep(Status.INFO, "Opened: " + calcName);
                     
-                    // TODO: Implement Dummy Data Entry and Calculation validations here in the future
+                    // Navigate Back
+                    navigateBackUI(driver);
                     
-                    navigateBack();
-                    
-                    // 🚀 SMART WAIT: Verify we are back on the main Tools menu instantly before looping
-                    wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId(calcName)));
+                    // 🚀 SMART WAIT: Verify we are back on the main Tools menu
+                    wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.xpath("//*[contains(@content-desc, '" + calcName + "')]")));
                     logStep(Status.PASS, "Successfully verified navigation for: " + calcName);
                     
                 } catch (Exception e) {
                     logStep(Status.FAIL, "Failed to interact with " + calcName + ". Error: " + e.getMessage());
-                    try { navigateBack(); } catch (Exception ex) {} // Safe recovery
+                    try { navigateBackUI(driver); } catch (Exception ex) {} // Safe recovery
                 }
             }
 
@@ -82,12 +96,53 @@ public class Tools_Screen_Tests extends Base_setup {
         }
     }
     
-    private void navigateBack() {
-        try {
-            getDriver().navigate().back();
-        } catch (Exception e) {
+    // ⚡ ZERO-LATENCY "HUMAN TAP"
+    private void safeClick(AndroidDriver driver, org.openqa.selenium.By by) throws Exception {
+        WebDriverWait clickWait = new WebDriverWait(driver, Duration.ofSeconds(8));
+        clickWait.pollingEvery(Duration.ofMillis(100)); 
+        
+        for (int i = 0; i < 2; i++) {
             try {
-                getDriver().findElement(AppiumBy.className("android.widget.Button")).click();
+                WebElement el = clickWait.until(ExpectedConditions.presenceOfElementLocated(by));
+                
+                int centerX = el.getRect().getX() + (el.getRect().getWidth() / 2);
+                int centerY = el.getRect().getY() + (el.getRect().getHeight() / 2);
+                
+                org.openqa.selenium.interactions.PointerInput finger = new org.openqa.selenium.interactions.PointerInput(org.openqa.selenium.interactions.PointerInput.Kind.TOUCH, "finger");
+                org.openqa.selenium.interactions.Sequence tap = new org.openqa.selenium.interactions.Sequence(finger, 1);
+                tap.addAction(finger.createPointerMove(Duration.ZERO, org.openqa.selenium.interactions.PointerInput.Origin.viewport(), centerX, centerY));
+                tap.addAction(finger.createPointerDown(org.openqa.selenium.interactions.PointerInput.MouseButton.LEFT.asArg()));
+                tap.addAction(finger.createPointerUp(org.openqa.selenium.interactions.PointerInput.MouseButton.LEFT.asArg()));
+                driver.perform(java.util.Collections.singletonList(tap));
+                return;
+            } catch(Exception e) {
+                Thread.sleep(200); 
+            }
+        }
+        driver.findElement(by).click(); 
+    }
+
+    // 🚀 SMART UI BACK NAVIGATOR 
+    private void navigateBackUI(AndroidDriver driver) {
+        try {
+            // Attempt 1: Try to click the Flutter UI Back Arrow (Top Left corner)
+            WebElement uiBackButton = driver.findElement(AppiumBy.xpath("//android.widget.Button[1]"));
+            int centerX = uiBackButton.getRect().getX() + (uiBackButton.getRect().getWidth() / 2);
+            int centerY = uiBackButton.getRect().getY() + (uiBackButton.getRect().getHeight() / 2);
+            
+            org.openqa.selenium.interactions.PointerInput finger = new org.openqa.selenium.interactions.PointerInput(org.openqa.selenium.interactions.PointerInput.Kind.TOUCH, "finger");
+            org.openqa.selenium.interactions.Sequence tap = new org.openqa.selenium.interactions.Sequence(finger, 1);
+            tap.addAction(finger.createPointerMove(Duration.ZERO, org.openqa.selenium.interactions.PointerInput.Origin.viewport(), centerX, centerY));
+            tap.addAction(finger.createPointerDown(org.openqa.selenium.interactions.PointerInput.MouseButton.LEFT.asArg()));
+            tap.addAction(finger.createPointerUp(org.openqa.selenium.interactions.PointerInput.MouseButton.LEFT.asArg()));
+            driver.perform(java.util.Collections.singletonList(tap));
+            
+            Thread.sleep(500); // Transition wait
+        } catch (Exception e) {
+            // Attempt 2: Fallback to Android Hardware Back Key
+            try { 
+                driver.pressKey(new KeyEvent(AndroidKey.BACK)); 
+                Thread.sleep(800);
             } catch (Exception ex) {}
         }
     }

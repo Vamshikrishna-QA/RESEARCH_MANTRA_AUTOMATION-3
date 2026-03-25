@@ -3,15 +3,15 @@
 <suite name="Failed suite [ResearchMantra Automation Suite]" guice-stage="DEVELOPMENT" verbose="3">
   <test thread-count="5" name="End-to-End Regression Test (New User Flow)(failed)" verbose="3">
     <classes>
-      <class name="RESEARCHMANTRA_AUTOMATION.AUTOMATION.All_Products_Payment_Flow_Tests">
+      <class name="RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests">
         <methods>
           <include name="setupSuite"/>
-          <include name="testAllProductsPaymentGatewayFlow"/>
           <include name="beforeTestLog"/>
           <include name="getResult"/>
+          <include name="testDynamicTradesScreenFlow"/>
           <include name="tearDownSuite"/>
         </methods>
-      </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.All_Products_Payment_Flow_Tests -->
+      </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests -->
       <class name="RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests">
         <methods>
           <include name="setupSuite"/>
@@ -39,15 +39,15 @@
           <include name="tearDownSuite"/>
         </methods>
       </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.Push_Notification_And_Signal_Tests -->
-      <class name="RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests">
+      <class name="RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests">
         <methods>
+          <include name="testBlogsScreenFlow"/>
           <include name="setupSuite"/>
           <include name="beforeTestLog"/>
           <include name="getResult"/>
-          <include name="testDynamicTradesScreenFlow"/>
           <include name="tearDownSuite"/>
         </methods>
-      </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests -->
+      </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests -->
     </classes>
   </test> <!-- End-to-End Regression Test (New User Flow)(failed) -->
 </suite> <!-- Failed suite [ResearchMantra Automation Suite] -->

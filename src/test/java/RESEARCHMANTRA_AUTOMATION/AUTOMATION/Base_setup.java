@@ -93,23 +93,27 @@ public class Base_setup {
                     .setAppActivity(prop.getProperty("app.activity"))
                     .setAppWaitActivity("*") 
                     .setAutoGrantPermissions(true)
-                    .setFullReset(true) 
+                    // 🚀 SPEED HACK: NoReset keeps you logged in and stops app reinstall
+                    .setNoReset(true) 
                     .setNewCommandTimeout(Duration.ofSeconds(3600));
 
-            // PERFORMANCE & SPEED CONFIGURATIONS
+            // 🚀 THE HYPER-SPEED CAPABILITIES FOR FLUTTER 🚀
             options.setCapability("appium:disableWindowAnimation", true);
-            options.setCapability("appium:skipServerInstallation", false);
-            options.setCapability("appium:disableAndroidWatchers", true); // 🚀 SPEED HACK: Disables background lag
+            options.setCapability("appium:skipServerInstallation", true); 
+            options.setCapability("appium:disableAndroidWatchers", true);
+            options.setCapability("appium:ignoreUnimportantViews", true); // Shrinks XML tree 
+            options.setCapability("appium:waitForIdleTimeout", 0);        // Zero UI lag
 
-            if (prop.getProperty("app.path") != null) options.setApp(prop.getProperty("app.path"));
+            // Optional: Only install app if we really want to
+             if (prop.getProperty("app.path") != null) options.setApp(prop.getProperty("app.path"));
 
-          //  Reporter.log("\n⏳ APPIUM IS CLEANING DEVICE AND INSTALLING FRESH APK...", true);
+            Reporter.log("\n⚡ FAST BOOT: Launching App...", true);
             driver.set(new AndroidDriver(new URL(prop.getProperty("appium.server.url")), options));
             
-            // 🚀 STABILITY RESTORED: Standard 15-second implicit wait allows the app to breathe
-            getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+            // 🚀 CRITICAL FIX: Implicit wait is globally 0. No more 15-second freezes!
+            getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
             
-            Reporter.log("✅ APPIUM SESSION ESTABLISHED - STABILITY MODE ENGAGED!", true);
+            Reporter.log("✅ APPIUM SESSION ESTABLISHED - HYPER-SPEED MODE ENGAGED!", true);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -140,17 +144,14 @@ public class Base_setup {
     }
 
     @AfterSuite
-//    public void tearDownSuite() {
-//        if (getDriver() != null) {
-//            try {
-//                getDriver().removeApp(prop.getProperty("app.package"));
-//            } catch (Exception e) {
-//                // Ignore if app already removed
-//            }
-//            getDriver().quit();
-//        }
-//        extent.flush();
-//    }
+    public void tearDownSuite() {
+        if (getDriver() != null) {
+            getDriver().quit();
+        }
+        if (extent != null) {
+            extent.flush();
+        }
+    }
 
     public void logStep(Status status, String message) {
         Reporter.log("  -> " + message, true); 
@@ -176,8 +177,7 @@ public class Base_setup {
 
     public void handlePromoPopup() {
         try {
-            // 🚀 SPEED HACK: Drop wait to ZERO to check instantly. Prevents 15-second hang if popup isn't there!
-            getDriver().manage().timeouts().implicitlyWait(Duration.ZERO);
+            // Because implicit wait is 0 globally, this check is instant!
             List<WebElement> gift = getDriver().findElements(AppiumBy.xpath("//*[contains(@content-desc, 'Gift') or contains(@content-desc, 'ACTIVATE')]"));
             
             if (!gift.isEmpty()) {
@@ -186,10 +186,8 @@ public class Base_setup {
                 new WebDriverWait(getDriver(), Duration.ofSeconds(3)).until(ExpectedConditions.invisibilityOfAllElements(gift));
             }
         } catch (Exception e) {
-        } finally {
-            // Restore normal implicit wait instantly
-            getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        }
+            // Removed the finally block that was putting 15s wait back in
+        } 
     }
 
     public void verifyToastMessage(String expectedText) {
@@ -210,22 +208,16 @@ public class Base_setup {
         handlePromoPopup();            
         
         try {
-            // Check if we are already there instantly
-            getDriver().manage().timeouts().implicitlyWait(Duration.ofMillis(0));
+            // Implicit wait is 0, so this check doesn't hang
             if (!getDriver().findElements(AppiumBy.accessibilityId("Explore")).isEmpty()) {
                 WebElement explore = getDriver().findElement(AppiumBy.accessibilityId("Explore"));
                 if (explore.isSelected() || !getDriver().findElements(AppiumBy.xpath("//*[contains(@content-desc, 'Explore Now')]")).isEmpty()) {
-                    getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
                     return; 
                 }
                 explore.click();
-                getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
                 return;
             }
-            getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        } catch (Exception e) {
-            getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        }
+        } catch (Exception e) {}
         
         // Aggressive recovery: Hit back up to 5 times and try to find the 'Explore' tab
         for (int i = 0; i < 5; i++) {
@@ -240,8 +232,6 @@ public class Base_setup {
         }
     }
             
-          
-
     public void scrollToElementByContentDesc(String contentDesc) {
         try {
             getDriver().findElement(AppiumBy.androidUIAutomator(

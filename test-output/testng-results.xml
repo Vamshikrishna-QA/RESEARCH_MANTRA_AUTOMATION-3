@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="3" failed="5" skipped="0">
+<testng-results ignored="0" total="8" passed="2" failed="6" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[
-⏳ APPIUM IS CLEANING DEVICE AND INSTALLING FRESH APK...]]>
+⚡ FAST BOOT: Launching App...]]>
     </line>
     <line>
-      <![CDATA[✅ APPIUM SESSION ESTABLISHED - STABILITY MODE ENGAGED!]]>
+      <![CDATA[✅ APPIUM SESSION ESTABLISHED - HYPER-SPEED MODE ENGAGED!]]>
     </line>
     <line>
       <![CDATA[
@@ -19,7 +19,7 @@
       <![CDATA[========================================================]]>
     </line>
     <line>
-      <![CDATA[  -> Starting Comprehensive Login Suite for: 7661936911]]>
+      <![CDATA[  -> Starting Comprehensive Login Suite for: 7661935544]]>
     </line>
     <line>
       <![CDATA[  -> No permission popup detected.]]>
@@ -49,37 +49,43 @@
       <![CDATA[  -> Validating OTP Screen UI Elements...]]>
     </line>
     <line>
-      <![CDATA[  -> Change Number and Resend Code buttons are visible.]]>
+      <![CDATA[  -> OTP UI Elements missing or took too long to load.]]>
     </line>
     <line>
       <![CDATA[  -> Executing Negative Test: Invalid OTP]]>
     </line>
     <line>
+      <![CDATA[  -> Expected toast containing 'Invalid' did not appear or vanished too quickly.]]>
+    </line>
+    <line>
       <![CDATA[  -> Intercepting valid OTP via API...]]>
     </line>
     <line>
-      <![CDATA[  -> Retrieved OTP: 787078]]>
+      <![CDATA[  -> Retrieved OTP: 465560]]>
     </line>
     <line>
       <![CDATA[  -> Entering Valid OTP...]]>
     </line>
     <line>
-      <![CDATA[  -> Detecting landing screen...]]>
+      <![CDATA[  -> Waiting 4 seconds for Dashboard/Registration routing...]]>
+    </line>
+    <line>
+      <![CDATA[  -> Checking routing destination...]]>
     </line>
     <line>
       <![CDATA[  -> New User detected. Executing Registration Flow...]]>
     </line>
     <line>
-      <![CDATA[  -> Entering Data: vamshi krishna | vamshikrishna11@test.com | Delhi]]>
+      <![CDATA[  -> Entering Data: vamshi krishna | vamshikrishna101@test.com | Delhi]]>
     </line>
     <line>
-      <![CDATA[  -> Scrolling to reveal Registration options...]]>
-    </line>
-    <line>
-      <![CDATA[  -> Testing Gender Radio Buttons...]]>
+      <![CDATA[  -> Testing Gender Radio Buttons (Male -> Female)...]]>
     </line>
     <line>
       <![CDATA[  -> Successfully toggled Gender selection to Female.]]>
+    </line>
+    <line>
+      <![CDATA[  -> Preparing to click Register...]]>
     </line>
     <line>
       <![CDATA[  -> Submitting Registration Form...]]>
@@ -91,7 +97,7 @@
       <![CDATA[  -> ✅ Test Case Passed: testLoginScreenFlow]]>
     </line>
     <line>
-      <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 156.611 SECONDS.]]>
+      <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 132.703 SECONDS.]]>
     </line>
     <line>
       <![CDATA[
@@ -131,176 +137,13 @@
       <![CDATA[  -> Testing Routing for: MCX Positional]]>
     </line>
     <line>
-      <![CDATA[  -> ✅ Successfully routed to Product Screen for: MCX Positional]]>
+      <![CDATA[  -> ❌ Routing failed for: MCX Positional]]>
     </line>
     <line>
-      <![CDATA[  -> Testing Routing for: Long term Goal Oriented]]>
+      <![CDATA[  -> ❌ Test Case Failed: testDashboardCompleteFlow]]>
     </line>
     <line>
-      <![CDATA[  -> ✅ Successfully routed to Product Screen for: Long term Goal Oriented]]>
-    </line>
-    <line>
-      <![CDATA[  -> Testing Routing for: Nifty Positional]]>
-    </line>
-    <line>
-      <![CDATA[  -> ✅ Successfully routed to Product Screen for: Nifty Positional]]>
-    </line>
-    <line>
-      <![CDATA[  -> Testing Routing for: Midcap Positional]]>
-    </line>
-    <line>
-      <![CDATA[  -> ✅ Successfully routed to Product Screen for: Midcap Positional]]>
-    </line>
-    <line>
-      <![CDATA[  -> Step 4: Deep Clicking Promotional Banners.]]>
-    </line>
-    <line>
-      <![CDATA[  -> Routing check for Research Reports timed out.]]>
-    </line>
-    <line>
-      <![CDATA[  -> Step 5: Testing Bottom Navigation Functional Clicks.]]>
-    </line>
-    <line>
-      <![CDATA[  -> Clicking Bottom Nav Tab: Trades]]>
-    </line>
-    <line>
-      <![CDATA[  -> Navigated to 'Trades' tab successfully.]]>
-    </line>
-    <line>
-      <![CDATA[  -> Clicking Bottom Nav Tab: Blogs]]>
-    </line>
-    <line>
-      <![CDATA[  -> Navigated to 'Blogs' tab successfully.]]>
-    </line>
-    <line>
-      <![CDATA[  -> Clicking Bottom Nav Tab: Tools]]>
-    </line>
-    <line>
-      <![CDATA[  -> Navigated to 'Tools' tab successfully.]]>
-    </line>
-    <line>
-      <![CDATA[  -> Clicking Bottom Nav Tab: Profile]]>
-    </line>
-    <line>
-      <![CDATA[  -> Navigated to 'Profile' tab successfully.]]>
-    </line>
-    <line>
-      <![CDATA[  -> Clicking Bottom Nav Tab: Explore]]>
-    </line>
-    <line>
-      <![CDATA[  -> Navigated to 'Explore' tab successfully.]]>
-    </line>
-    <line>
-      <![CDATA[  -> ✅ Master Dashboard Top-to-Bottom Flow completed successfully.]]>
-    </line>
-    <line>
-      <![CDATA[  -> ✅ Test Case Passed: testDashboardCompleteFlow]]>
-    </line>
-    <line>
-      <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 37.708 SECONDS.]]>
-    </line>
-    <line>
-      <![CDATA[
-========================================================]]>
-    </line>
-    <line>
-      <![CDATA[🚀 STARTING TEST: testAllProductsPaymentGatewayFlow]]>
-    </line>
-    <line>
-      <![CDATA[========================================================]]>
-    </line>
-    <line>
-      <![CDATA[  -> Step 1: Navigating to Trades -> Home Tab.]]>
-    </line>
-    <line>
-      <![CDATA[  -> Step 2: Processing Product Cards sequentially...]]>
-    </line>
-    <line>
-      <![CDATA[  -> ===============================================]]>
-    </line>
-    <line>
-      <![CDATA[  -> 🧪 TESTING BUSINESS FLOW FOR: MCX Positional]]>
-    </line>
-    <line>
-      <![CDATA[  -> Testing Heart/Like Toggle...]]>
-    </line>
-    <line>
-      <![CDATA[  -> Heart icon not found for this card.]]>
-    </line>
-    <line>
-      <![CDATA[  -> Clicking Product Card to open details...]]>
-    </line>
-    <line>
-      <![CDATA[  -> Could not route into card. Skipping to next.]]>
-    </line>
-    <line>
-      <![CDATA[  -> ===============================================]]>
-    </line>
-    <line>
-      <![CDATA[  -> 🧪 TESTING BUSINESS FLOW FOR: Nifty Positional]]>
-    </line>
-    <line>
-      <![CDATA[  -> Testing Heart/Like Toggle...]]>
-    </line>
-    <line>
-      <![CDATA[  -> Heart icon not found for this card.]]>
-    </line>
-    <line>
-      <![CDATA[  -> Clicking Product Card to open details...]]>
-    </line>
-    <line>
-      <![CDATA[  -> Could not route into card. Skipping to next.]]>
-    </line>
-    <line>
-      <![CDATA[  -> ===============================================]]>
-    </line>
-    <line>
-      <![CDATA[  -> 🧪 TESTING BUSINESS FLOW FOR: Midcap Positional]]>
-    </line>
-    <line>
-      <![CDATA[  -> Testing Heart/Like Toggle...]]>
-    </line>
-    <line>
-      <![CDATA[  -> Heart icon not found for this card.]]>
-    </line>
-    <line>
-      <![CDATA[  -> Clicking Product Card to open details...]]>
-    </line>
-    <line>
-      <![CDATA[  -> Could not route into card. Skipping to next.]]>
-    </line>
-    <line>
-      <![CDATA[  -> ===============================================]]>
-    </line>
-    <line>
-      <![CDATA[  -> 🧪 TESTING BUSINESS FLOW FOR: Long term Goal Oriented]]>
-    </line>
-    <line>
-      <![CDATA[  -> Testing Heart/Like Toggle...]]>
-    </line>
-    <line>
-      <![CDATA[  -> Heart icon not found for this card.]]>
-    </line>
-    <line>
-      <![CDATA[  -> Clicking Product Card to open details...]]>
-    </line>
-    <line>
-      <![CDATA[  -> Could not route into card. Skipping to next.]]>
-    </line>
-    <line>
-      <![CDATA[  -> ===============================================]]>
-    </line>
-    <line>
-      <![CDATA[  -> Step 3: Verifying Ledger in 'My Collection']]>
-    </line>
-    <line>
-      <![CDATA[  -> No new products purchased. Skipping Collection verification.]]>
-    </line>
-    <line>
-      <![CDATA[  -> ✅ Test Case Passed: testAllProductsPaymentGatewayFlow]]>
-    </line>
-    <line>
-      <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 236.57 SECONDS.]]>
+      <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 10.778 SECONDS.]]>
     </line>
     <line>
       <![CDATA[
@@ -322,7 +165,43 @@
       <![CDATA[  -> Step 1: Extracting dynamic product list from the app...]]>
     </line>
     <line>
-      <![CDATA[  -> Dynamically found 3 products: [Nifty Positional, Midcap Positional, Long term Goal Oriented]]]>
+      <![CDATA[  -> Dynamically found 3 products: [MCX Positional, Nifty Positional, Midcap Positional]]]>
+    </line>
+    <line>
+      <![CDATA[  -> ===============================================]]>
+    </line>
+    <line>
+      <![CDATA[  -> 🧪 TESTING PRODUCT: MCX Positional]]>
+    </line>
+    <line>
+      <![CDATA[  -> -> Checking Home Tab for: MCX Positional]]>
+    </line>
+    <line>
+      <![CDATA[  -> Found Home Service Card for: MCX Positional]]>
+    </line>
+    <line>
+      <![CDATA[  -> -> Checking Live Trades Tab for: MCX Positional]]>
+    </line>
+    <line>
+      <![CDATA[  ->    -> Verifying 'Details' Sub-Tab (Subscription Logic).]]>
+    </line>
+    <line>
+      <![CDATA[  -> 🔒 Product [MCX Positional] is NOT PURCHASED. 'Activate Now' lock screen is correctly displayed.]]>
+    </line>
+    <line>
+      <![CDATA[  ->    -> Verifying 'Live Commentary' Sub-Tab (Free Access).]]>
+    </line>
+    <line>
+      <![CDATA[  -> ✅ Live Commentary feed loaded with free access data.]]>
+    </line>
+    <line>
+      <![CDATA[  -> -> Checking Closed Trades Tab for: MCX Positional (Free Access)]]>
+    </line>
+    <line>
+      <![CDATA[  -> ✅ Closed Trades (Booked Trades) loaded with free access data.]]>
+    </line>
+    <line>
+      <![CDATA[  -> ✅ Full verification complete for: MCX Positional]]>
     </line>
     <line>
       <![CDATA[  -> ===============================================]]>
@@ -397,29 +276,7 @@
       <![CDATA[  -> ❌ Test Case Failed: testDynamicTradesScreenFlow]]>
     </line>
     <line>
-      <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 95.651 SECONDS.]]>
-    </line>
-    <line>
-      <![CDATA[
-========================================================]]>
-    </line>
-    <line>
-      <![CDATA[🚀 STARTING TEST: testLiveSignalRoutingAndNotifications]]>
-    </line>
-    <line>
-      <![CDATA[========================================================]]>
-    </line>
-    <line>
-      <![CDATA[  -> Verifying Signal Distribution Logic.]]>
-    </line>
-    <line>
-      <![CDATA[  -> Opening the first available product to check for Live Commentary...]]>
-    </line>
-    <line>
-      <![CDATA[  -> ❌ Test Case Failed: testLiveSignalRoutingAndNotifications]]>
-    </line>
-    <line>
-      <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 63.168 SECONDS.]]>
+      <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 32.341 SECONDS.]]>
     </line>
     <line>
       <![CDATA[
@@ -447,7 +304,7 @@
       <![CDATA[  -> ❌ Test Case Failed: testBlogsScreenFlow]]>
     </line>
     <line>
-      <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 15.79 SECONDS.]]>
+      <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 10.865 SECONDS.]]>
     </line>
     <line>
       <![CDATA[
@@ -472,7 +329,7 @@
       <![CDATA[  -> ❌ Test Case Failed: testToolsScreenFlow]]>
     </line>
     <line>
-      <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 15.833 SECONDS.]]>
+      <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 13.048 SECONDS.]]>
     </line>
     <line>
       <![CDATA[
@@ -503,15 +360,140 @@
       <![CDATA[  -> ❌ Test Case Failed: testProfileAndSettingsFlow]]>
     </line>
     <line>
-      <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 16.037 SECONDS.]]>
+      <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 13.048 SECONDS.]]>
+    </line>
+    <line>
+      <![CDATA[
+========================================================]]>
+    </line>
+    <line>
+      <![CDATA[🚀 STARTING TEST: testAllProductsPaymentGatewayFlow]]>
+    </line>
+    <line>
+      <![CDATA[========================================================]]>
+    </line>
+    <line>
+      <![CDATA[  -> Step 1: Navigating to Trades Tab.]]>
+    </line>
+    <line>
+      <![CDATA[  -> Step 2: Processing Product Cards sequentially...]]>
+    </line>
+    <line>
+      <![CDATA[  -> ===============================================]]>
+    </line>
+    <line>
+      <![CDATA[  -> 🧪 TESTING BUSINESS FLOW FOR: MCX Positional]]>
+    </line>
+    <line>
+      <![CDATA[  -> Clicking Product Card to open details...]]>
+    </line>
+    <line>
+      <![CDATA[  -> Successfully navigated to Product Subscription Page.]]>
+    </line>
+    <line>
+      <![CDATA[  -> Verifying 'Overview' and 'Performance' Product Details Tabs...]]>
+    </line>
+    <line>
+      <![CDATA[  -> ✅ Overview and Performance tabs are active and switchable.]]>
+    </line>
+    <line>
+      <![CDATA[  -> Scrolling to evaluate Subscription Status...]]>
+    </line>
+    <line>
+      <![CDATA[  -> Product NOT OWNED. Proceeding to Gateway...]]>
+    </line>
+    <line>
+      <![CDATA[  -> Testing Payment Gateway Rebound...]]>
+    </line>
+    <line>
+      <![CDATA[  -> Returned from Gateway successfully.]]>
+    </line>
+    <line>
+      <![CDATA[  -> Applying Coupon: SUMMER100]]>
+    </line>
+    <line>
+      <![CDATA[  -> Coupon flow skipped/failed.]]>
+    </line>
+    <line>
+      <![CDATA[  -> ===============================================]]>
+    </line>
+    <line>
+      <![CDATA[  -> 🧪 TESTING BUSINESS FLOW FOR: Long term Goal Oriented]]>
+    </line>
+    <line>
+      <![CDATA[  -> Clicking Product Card to open details...]]>
+    </line>
+    <line>
+      <![CDATA[  -> Could not route into card. Skipping to next.]]>
+    </line>
+    <line>
+      <![CDATA[  -> ===============================================]]>
+    </line>
+    <line>
+      <![CDATA[  -> 🧪 TESTING BUSINESS FLOW FOR: Nifty Positional]]>
+    </line>
+    <line>
+      <![CDATA[  -> Clicking Product Card to open details...]]>
+    </line>
+    <line>
+      <![CDATA[  -> Could not route into card. Skipping to next.]]>
+    </line>
+    <line>
+      <![CDATA[  -> ===============================================]]>
+    </line>
+    <line>
+      <![CDATA[  -> 🧪 TESTING BUSINESS FLOW FOR: Midcap Positional]]>
+    </line>
+    <line>
+      <![CDATA[  -> Clicking Product Card to open details...]]>
+    </line>
+    <line>
+      <![CDATA[  -> Could not route into card. Skipping to next.]]>
+    </line>
+    <line>
+      <![CDATA[  -> ===============================================]]>
+    </line>
+    <line>
+      <![CDATA[  -> Step 3: Verifying Ledger in 'My Collection']]>
+    </line>
+    <line>
+      <![CDATA[  -> No new products purchased. Skipping Collection verification.]]>
+    </line>
+    <line>
+      <![CDATA[  -> ✅ Test Case Passed: testAllProductsPaymentGatewayFlow]]>
+    </line>
+    <line>
+      <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 157.964 SECONDS.]]>
+    </line>
+    <line>
+      <![CDATA[
+========================================================]]>
+    </line>
+    <line>
+      <![CDATA[🚀 STARTING TEST: testLiveSignalRoutingAndNotifications]]>
+    </line>
+    <line>
+      <![CDATA[========================================================]]>
+    </line>
+    <line>
+      <![CDATA[  -> Verifying Signal Distribution Logic.]]>
+    </line>
+    <line>
+      <![CDATA[  -> Opening the first available product to check for Live Commentary...]]>
+    </line>
+    <line>
+      <![CDATA[  -> ❌ Test Case Failed: testLiveSignalRoutingAndNotifications]]>
+    </line>
+    <line>
+      <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 22.085 SECONDS.]]>
     </line>
   </reporter-output>
-  <suite started-at="2026-03-25T11:28:49 IST" name="ResearchMantra Automation Suite" finished-at="2026-03-25T11:39:37 IST" duration-ms="647160">
+  <suite started-at="2026-03-27T13:55:44 IST" name="ResearchMantra Master Suite" finished-at="2026-03-27T14:02:27 IST" duration-ms="403289">
     <groups>
     </groups>
-    <test started-at="2026-03-25T11:28:49 IST" name="End-to-End Regression Test (New User Flow)" finished-at="2026-03-25T11:39:37 IST" duration-ms="647160">
+    <test started-at="2026-03-27T13:55:44 IST" name="E2E Flutter App Flow" finished-at="2026-03-27T14:02:27 IST" duration-ms="403289">
       <class name="RESEARCHMANTRA_AUTOMATION.AUTOMATION.Push_Notification_And_Signal_Tests">
-        <test-method is-config="true" signature="beforeTestLog(java.lang.reflect.Method)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Push_Notification_And_Signal_Tests@198b6731]" started-at="2026-03-25T11:37:41 IST" name="beforeTestLog" finished-at="2026-03-25T11:37:41 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeTestLog(java.lang.reflect.Method)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Push_Notification_And_Signal_Tests@3bf7ca37]" started-at="2026-03-27T14:02:03 IST" name="beforeTestLog" finished-at="2026-03-27T14:02:03 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -532,7 +514,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestLog -->
-        <test-method signature="testLiveSignalRoutingAndNotifications()[pri:8, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Push_Notification_And_Signal_Tests@198b6731]" started-at="2026-03-25T11:37:41 IST" name="testLiveSignalRoutingAndNotifications" description="Test In-App Notification Routing and Signal State Distribution" finished-at="2026-03-25T11:38:44 IST" duration-ms="63165" status="FAIL">
+        <test-method signature="testLiveSignalRoutingAndNotifications()[pri:8, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Push_Notification_And_Signal_Tests@3bf7ca37]" started-at="2026-03-27T14:02:03 IST" name="testLiveSignalRoutingAndNotifications" description="Test In-App Notification Routing and Signal State Distribution" finished-at="2026-03-27T14:02:25 IST" duration-ms="22083" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Failed to open product card to check signals. Clicks ignored by UI.]]>
@@ -579,11 +561,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </line>
           </reporter-output>
         </test-method> <!-- testLiveSignalRoutingAndNotifications -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Push_Notification_And_Signal_Tests@198b6731]" started-at="2026-03-25T11:38:44 IST" name="getResult" finished-at="2026-03-25T11:38:45 IST" duration-ms="1195" status="PASS">
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Push_Notification_And_Signal_Tests@3bf7ca37]" started-at="2026-03-27T14:02:25 IST" name="getResult" finished-at="2026-03-27T14:02:27 IST" duration-ms="2087" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testLiveSignalRoutingAndNotifications status=FAILURE method=Push_Notification_And_Signal_Tests.testLiveSignalRoutingAndNotifications()[pri:8, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Push_Notification_And_Signal_Tests@198b6731] output=  -> Verifying Signal Distribution Logic.]]]>
+                <![CDATA[[TestResult name=testLiveSignalRoutingAndNotifications status=FAILURE method=Push_Notification_And_Signal_Tests.testLiveSignalRoutingAndNotifications()[pri:8, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Push_Notification_And_Signal_Tests@3bf7ca37] output=  -> Verifying Signal Distribution Logic.]]]>
               </value>
             </param>
           </params>
@@ -592,13 +574,34 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               <![CDATA[  -> ❌ Test Case Failed: testLiveSignalRoutingAndNotifications]]>
             </line>
             <line>
-              <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 63.168 SECONDS.]]>
+              <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 22.085 SECONDS.]]>
             </line>
           </reporter-output>
         </test-method> <!-- getResult -->
       </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.Push_Notification_And_Signal_Tests -->
       <class name="RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests">
-        <test-method signature="testProfileAndSettingsFlow()[pri:6, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests@3bf7ca37]" started-at="2026-03-25T11:39:19 IST" name="testProfileAndSettingsFlow" description="Comprehensive Profile, Deep Clicks, Chrome Intents, and Settings Flow" finished-at="2026-03-25T11:39:35 IST" duration-ms="16036" status="FAIL">
+        <test-method is-config="true" signature="beforeTestLog(java.lang.reflect.Method)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests@7c6908d7]" started-at="2026-03-27T13:59:10 IST" name="beforeTestLog" finished-at="2026-03-27T13:59:10 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests.testProfileAndSettingsFlow()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[
+========================================================]]>
+            </line>
+            <line>
+              <![CDATA[🚀 STARTING TEST: testProfileAndSettingsFlow]]>
+            </line>
+            <line>
+              <![CDATA[========================================================]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeTestLog -->
+        <test-method signature="testProfileAndSettingsFlow()[pri:6, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests@7c6908d7]" started-at="2026-03-27T13:59:10 IST" name="testProfileAndSettingsFlow" description="Comprehensive Profile, Deep Clicks, Chrome Intents, and Settings Flow" finished-at="2026-03-27T13:59:23 IST" duration-ms="13047" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Expected condition failed: waiting for presence of element located by: AppiumBy.accessibilityId: Update (tried for 12 second(s) with 100 milliseconds interval)]]>
@@ -654,32 +657,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </line>
           </reporter-output>
         </test-method> <!-- testProfileAndSettingsFlow -->
-        <test-method is-config="true" signature="beforeTestLog(java.lang.reflect.Method)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests@3bf7ca37]" started-at="2026-03-25T11:39:19 IST" name="beforeTestLog" finished-at="2026-03-25T11:39:19 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests@7c6908d7]" started-at="2026-03-27T13:59:23 IST" name="getResult" finished-at="2026-03-27T13:59:24 IST" duration-ms="1068" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests.testProfileAndSettingsFlow()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[
-========================================================]]>
-            </line>
-            <line>
-              <![CDATA[🚀 STARTING TEST: testProfileAndSettingsFlow]]>
-            </line>
-            <line>
-              <![CDATA[========================================================]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- beforeTestLog -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests@3bf7ca37]" started-at="2026-03-25T11:39:35 IST" name="getResult" finished-at="2026-03-25T11:39:37 IST" duration-ms="1449" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testProfileAndSettingsFlow status=FAILURE method=Profile_And_Settings_Tests.testProfileAndSettingsFlow()[pri:6, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests@3bf7ca37] output=  -> Starting Profile & Settings Verification.]]]>
+                <![CDATA[[TestResult name=testProfileAndSettingsFlow status=FAILURE method=Profile_And_Settings_Tests.testProfileAndSettingsFlow()[pri:6, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests@7c6908d7] output=  -> Starting Profile & Settings Verification.]]]>
               </value>
             </param>
           </params>
@@ -688,13 +670,13 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               <![CDATA[  -> ❌ Test Case Failed: testProfileAndSettingsFlow]]>
             </line>
             <line>
-              <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 16.037 SECONDS.]]>
+              <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 13.048 SECONDS.]]>
             </line>
           </reporter-output>
         </test-method> <!-- getResult -->
       </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests -->
       <class name="RESEARCHMANTRA_AUTOMATION.AUTOMATION.Tools_Screen_Tests">
-        <test-method signature="testToolsScreenFlow()[pri:5, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Tools_Screen_Tests@3c9754d8]" started-at="2026-03-25T11:39:02 IST" name="testToolsScreenFlow" description="Verify Tools Tab UI and Open All Calculators (TC-075 to TC-085)" finished-at="2026-03-25T11:39:18 IST" duration-ms="15831" status="FAIL">
+        <test-method signature="testToolsScreenFlow()[pri:5, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Tools_Screen_Tests@198b6731]" started-at="2026-03-27T13:58:56 IST" name="testToolsScreenFlow" description="Verify Tools Tab UI and Open All Calculators (TC-075 to TC-085)" finished-at="2026-03-27T13:59:09 IST" duration-ms="13047" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Tools Screen Flow Failure: Expected condition failed: waiting for presence of element located by: By.xpath: //*[contains(@content-desc, 'Retirement Plans')] (tried for 12 second(s) with 100 milliseconds interval)]]>
@@ -744,7 +726,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </line>
           </reporter-output>
         </test-method> <!-- testToolsScreenFlow -->
-        <test-method is-config="true" signature="beforeTestLog(java.lang.reflect.Method)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Tools_Screen_Tests@3c9754d8]" started-at="2026-03-25T11:39:02 IST" name="beforeTestLog" finished-at="2026-03-25T11:39:02 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeTestLog(java.lang.reflect.Method)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Tools_Screen_Tests@198b6731]" started-at="2026-03-27T13:58:56 IST" name="beforeTestLog" finished-at="2026-03-27T13:58:56 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -765,11 +747,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestLog -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Tools_Screen_Tests@3c9754d8]" started-at="2026-03-25T11:39:18 IST" name="getResult" finished-at="2026-03-25T11:39:19 IST" duration-ms="1346" status="PASS">
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Tools_Screen_Tests@198b6731]" started-at="2026-03-27T13:59:09 IST" name="getResult" finished-at="2026-03-27T13:59:10 IST" duration-ms="1067" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testToolsScreenFlow status=FAILURE method=Tools_Screen_Tests.testToolsScreenFlow()[pri:5, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Tools_Screen_Tests@3c9754d8] output=  -> Starting Tools Screen Verification.]]]>
+                <![CDATA[[TestResult name=testToolsScreenFlow status=FAILURE method=Tools_Screen_Tests.testToolsScreenFlow()[pri:5, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Tools_Screen_Tests@198b6731] output=  -> Starting Tools Screen Verification.]]]>
               </value>
             </param>
           </params>
@@ -778,34 +760,13 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               <![CDATA[  -> ❌ Test Case Failed: testToolsScreenFlow]]>
             </line>
             <line>
-              <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 15.833 SECONDS.]]>
+              <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 13.048 SECONDS.]]>
             </line>
           </reporter-output>
         </test-method> <!-- getResult -->
       </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.Tools_Screen_Tests -->
       <class name="RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests">
-        <test-method is-config="true" signature="beforeTestLog(java.lang.reflect.Method)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests@3857f613]" started-at="2026-03-25T11:36:04 IST" name="beforeTestLog" finished-at="2026-03-25T11:36:04 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests.testDynamicTradesScreenFlow()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[
-========================================================]]>
-            </line>
-            <line>
-              <![CDATA[🚀 STARTING TEST: testDynamicTradesScreenFlow]]>
-            </line>
-            <line>
-              <![CDATA[========================================================]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- beforeTestLog -->
-        <test-method signature="testDynamicTradesScreenFlow()[pri:3, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests@3857f613]" started-at="2026-03-25T11:36:04 IST" name="testDynamicTradesScreenFlow" description="Dynamically Verify All Products: Subscription States, Free Access Tabs, and Empty Data" finished-at="2026-03-25T11:37:39 IST" duration-ms="95647" status="FAIL">
+        <test-method signature="testDynamicTradesScreenFlow()[pri:3, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests@489115ef]" started-at="2026-03-27T13:58:10 IST" name="testDynamicTradesScreenFlow" description="Dynamically Verify All Products: Subscription States, Free Access Tabs, and Empty Data" finished-at="2026-03-27T13:58:43 IST" duration-ms="32339" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Closed Trades UI check failed.]]>
@@ -813,7 +774,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: Closed Trades UI check failed.
 at org.testng.Assert.fail(Assert.java:111)
-at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests.verifyClosedTradeDetails(Trades_Screen_Tests.java:236)
+at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests.verifyClosedTradeDetails(Trades_Screen_Tests.java:238)
 at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests.testDynamicTradesScreenFlow(Trades_Screen_Tests.java:90)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:565)
@@ -855,7 +816,43 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               <![CDATA[  -> Step 1: Extracting dynamic product list from the app...]]>
             </line>
             <line>
-              <![CDATA[  -> Dynamically found 3 products: [Nifty Positional, Midcap Positional, Long term Goal Oriented]]]>
+              <![CDATA[  -> Dynamically found 3 products: [MCX Positional, Nifty Positional, Midcap Positional]]]>
+            </line>
+            <line>
+              <![CDATA[  -> ===============================================]]>
+            </line>
+            <line>
+              <![CDATA[  -> 🧪 TESTING PRODUCT: MCX Positional]]>
+            </line>
+            <line>
+              <![CDATA[  -> -> Checking Home Tab for: MCX Positional]]>
+            </line>
+            <line>
+              <![CDATA[  -> Found Home Service Card for: MCX Positional]]>
+            </line>
+            <line>
+              <![CDATA[  -> -> Checking Live Trades Tab for: MCX Positional]]>
+            </line>
+            <line>
+              <![CDATA[  ->    -> Verifying 'Details' Sub-Tab (Subscription Logic).]]>
+            </line>
+            <line>
+              <![CDATA[  -> 🔒 Product [MCX Positional] is NOT PURCHASED. 'Activate Now' lock screen is correctly displayed.]]>
+            </line>
+            <line>
+              <![CDATA[  ->    -> Verifying 'Live Commentary' Sub-Tab (Free Access).]]>
+            </line>
+            <line>
+              <![CDATA[  -> ✅ Live Commentary feed loaded with free access data.]]>
+            </line>
+            <line>
+              <![CDATA[  -> -> Checking Closed Trades Tab for: MCX Positional (Free Access)]]>
+            </line>
+            <line>
+              <![CDATA[  -> ✅ Closed Trades (Booked Trades) loaded with free access data.]]>
+            </line>
+            <line>
+              <![CDATA[  -> ✅ Full verification complete for: MCX Positional]]>
             </line>
             <line>
               <![CDATA[  -> ===============================================]]>
@@ -928,11 +925,32 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </line>
           </reporter-output>
         </test-method> <!-- testDynamicTradesScreenFlow -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests@3857f613]" started-at="2026-03-25T11:37:39 IST" name="getResult" finished-at="2026-03-25T11:37:41 IST" duration-ms="1299" status="PASS">
+        <test-method is-config="true" signature="beforeTestLog(java.lang.reflect.Method)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests@489115ef]" started-at="2026-03-27T13:58:10 IST" name="beforeTestLog" finished-at="2026-03-27T13:58:10 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testDynamicTradesScreenFlow status=FAILURE method=Trades_Screen_Tests.testDynamicTradesScreenFlow()[pri:3, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests@3857f613] output=  -> Starting Dynamic Trades Screen Verification.]]]>
+                <![CDATA[public void RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests.testDynamicTradesScreenFlow()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[
+========================================================]]>
+            </line>
+            <line>
+              <![CDATA[🚀 STARTING TEST: testDynamicTradesScreenFlow]]>
+            </line>
+            <line>
+              <![CDATA[========================================================]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeTestLog -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests@489115ef]" started-at="2026-03-27T13:58:43 IST" name="getResult" finished-at="2026-03-27T13:58:44 IST" duration-ms="1146" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testDynamicTradesScreenFlow status=FAILURE method=Trades_Screen_Tests.testDynamicTradesScreenFlow()[pri:3, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests@489115ef] output=  -> Starting Dynamic Trades Screen Verification.]]]>
               </value>
             </param>
           </params>
@@ -941,13 +959,13 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               <![CDATA[  -> ❌ Test Case Failed: testDynamicTradesScreenFlow]]>
             </line>
             <line>
-              <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 95.651 SECONDS.]]>
+              <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 32.341 SECONDS.]]>
             </line>
           </reporter-output>
         </test-method> <!-- getResult -->
       </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests -->
       <class name="RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests">
-        <test-method signature="testBlogsScreenFlow()[pri:4, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests@7c6908d7]" started-at="2026-03-25T11:38:45 IST" name="testBlogsScreenFlow" description="Verify Blogs Tab, Feed, Like Toggle, and Subscription Create Logic" finished-at="2026-03-25T11:39:01 IST" duration-ms="15787" status="FAIL">
+        <test-method signature="testBlogsScreenFlow()[pri:4, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests@3857f613]" started-at="2026-03-27T13:58:44 IST" name="testBlogsScreenFlow" description="Verify Blogs Tab, Feed, Like Toggle, and Subscription Create Logic" finished-at="2026-03-27T13:58:55 IST" duration-ms="10864" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Blog Feed is empty or failing to load.]]>
@@ -1000,7 +1018,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </line>
           </reporter-output>
         </test-method> <!-- testBlogsScreenFlow -->
-        <test-method is-config="true" signature="beforeTestLog(java.lang.reflect.Method)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests@7c6908d7]" started-at="2026-03-25T11:38:45 IST" name="beforeTestLog" finished-at="2026-03-25T11:38:45 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeTestLog(java.lang.reflect.Method)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests@3857f613]" started-at="2026-03-27T13:58:44 IST" name="beforeTestLog" finished-at="2026-03-27T13:58:44 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1021,11 +1039,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestLog -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests@7c6908d7]" started-at="2026-03-25T11:39:01 IST" name="getResult" finished-at="2026-03-25T11:39:02 IST" duration-ms="1196" status="PASS">
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests@3857f613]" started-at="2026-03-27T13:58:55 IST" name="getResult" finished-at="2026-03-27T13:58:56 IST" duration-ms="1086" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testBlogsScreenFlow status=FAILURE method=Blogs_Screen_Tests.testBlogsScreenFlow()[pri:4, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests@7c6908d7] output=  -> Starting Blogs Screen Verification.]]]>
+                <![CDATA[[TestResult name=testBlogsScreenFlow status=FAILURE method=Blogs_Screen_Tests.testBlogsScreenFlow()[pri:4, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests@3857f613] output=  -> Starting Blogs Screen Verification.]]]>
               </value>
             </param>
           </params>
@@ -1034,34 +1052,50 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               <![CDATA[  -> ❌ Test Case Failed: testBlogsScreenFlow]]>
             </line>
             <line>
-              <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 15.79 SECONDS.]]>
+              <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 10.865 SECONDS.]]>
             </line>
           </reporter-output>
         </test-method> <!-- getResult -->
       </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests -->
       <class name="RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests">
-        <test-method is-config="true" signature="beforeTestLog(java.lang.reflect.Method)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests@15de0b3c]" started-at="2026-03-25T11:31:27 IST" name="beforeTestLog" finished-at="2026-03-25T11:31:27 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests.testDashboardCompleteFlow()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[
-========================================================]]>
-            </line>
-            <line>
-              <![CDATA[🚀 STARTING TEST: testDashboardCompleteFlow]]>
-            </line>
-            <line>
-              <![CDATA[========================================================]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- beforeTestLog -->
-        <test-method signature="testDashboardCompleteFlow()[pri:2, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests@15de0b3c]" started-at="2026-03-25T11:31:27 IST" name="testDashboardCompleteFlow" description="Comprehensive E2E Dashboard Flow: Header, Notifications, Cards, Analytics, and Nav" finished-at="2026-03-25T11:32:05 IST" duration-ms="37706" status="PASS">
+        <test-method signature="testDashboardCompleteFlow()[pri:2, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests@15de0b3c]" started-at="2026-03-27T13:57:57 IST" name="testDashboardCompleteFlow" description="Comprehensive E2E Dashboard Flow: Header, Notifications, Cards, Analytics, and Nav" finished-at="2026-03-27T13:58:08 IST" duration-ms="10776" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Routing failed for product card: MCX Positional]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Routing failed for product card: MCX Positional
+at org.testng.Assert.fail(Assert.java:111)
+at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests.testDashboardCompleteFlow(Dashboard_Navigation_Tests.java:108)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
             <line>
               <![CDATA[  -> Starting Comprehensive Dashboard Verification...]]>
@@ -1091,101 +1125,62 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               <![CDATA[  -> Testing Routing for: MCX Positional]]>
             </line>
             <line>
-              <![CDATA[  -> ✅ Successfully routed to Product Screen for: MCX Positional]]>
-            </line>
-            <line>
-              <![CDATA[  -> Testing Routing for: Long term Goal Oriented]]>
-            </line>
-            <line>
-              <![CDATA[  -> ✅ Successfully routed to Product Screen for: Long term Goal Oriented]]>
-            </line>
-            <line>
-              <![CDATA[  -> Testing Routing for: Nifty Positional]]>
-            </line>
-            <line>
-              <![CDATA[  -> ✅ Successfully routed to Product Screen for: Nifty Positional]]>
-            </line>
-            <line>
-              <![CDATA[  -> Testing Routing for: Midcap Positional]]>
-            </line>
-            <line>
-              <![CDATA[  -> ✅ Successfully routed to Product Screen for: Midcap Positional]]>
-            </line>
-            <line>
-              <![CDATA[  -> Step 4: Deep Clicking Promotional Banners.]]>
-            </line>
-            <line>
-              <![CDATA[  -> Routing check for Research Reports timed out.]]>
-            </line>
-            <line>
-              <![CDATA[  -> Step 5: Testing Bottom Navigation Functional Clicks.]]>
-            </line>
-            <line>
-              <![CDATA[  -> Clicking Bottom Nav Tab: Trades]]>
-            </line>
-            <line>
-              <![CDATA[  -> Navigated to 'Trades' tab successfully.]]>
-            </line>
-            <line>
-              <![CDATA[  -> Clicking Bottom Nav Tab: Blogs]]>
-            </line>
-            <line>
-              <![CDATA[  -> Navigated to 'Blogs' tab successfully.]]>
-            </line>
-            <line>
-              <![CDATA[  -> Clicking Bottom Nav Tab: Tools]]>
-            </line>
-            <line>
-              <![CDATA[  -> Navigated to 'Tools' tab successfully.]]>
-            </line>
-            <line>
-              <![CDATA[  -> Clicking Bottom Nav Tab: Profile]]>
-            </line>
-            <line>
-              <![CDATA[  -> Navigated to 'Profile' tab successfully.]]>
-            </line>
-            <line>
-              <![CDATA[  -> Clicking Bottom Nav Tab: Explore]]>
-            </line>
-            <line>
-              <![CDATA[  -> Navigated to 'Explore' tab successfully.]]>
-            </line>
-            <line>
-              <![CDATA[  -> ✅ Master Dashboard Top-to-Bottom Flow completed successfully.]]>
+              <![CDATA[  -> ❌ Routing failed for: MCX Positional]]>
             </line>
           </reporter-output>
         </test-method> <!-- testDashboardCompleteFlow -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests@15de0b3c]" started-at="2026-03-25T11:32:05 IST" name="getResult" finished-at="2026-03-25T11:32:06 IST" duration-ms="1329" status="PASS">
+        <test-method is-config="true" signature="beforeTestLog(java.lang.reflect.Method)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests@15de0b3c]" started-at="2026-03-27T13:57:57 IST" name="beforeTestLog" finished-at="2026-03-27T13:57:57 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testDashboardCompleteFlow status=SUCCESS method=Dashboard_Navigation_Tests.testDashboardCompleteFlow()[pri:2, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests@15de0b3c] output=  -> Starting Comprehensive Dashboard Verification...]]]>
+                <![CDATA[public void RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests.testDashboardCompleteFlow()]]>
               </value>
             </param>
           </params>
           <reporter-output>
             <line>
-              <![CDATA[  -> ✅ Test Case Passed: testDashboardCompleteFlow]]>
+              <![CDATA[
+========================================================]]>
             </line>
             <line>
-              <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 37.708 SECONDS.]]>
+              <![CDATA[🚀 STARTING TEST: testDashboardCompleteFlow]]>
+            </line>
+            <line>
+              <![CDATA[========================================================]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeTestLog -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests@15de0b3c]" started-at="2026-03-27T13:58:08 IST" name="getResult" finished-at="2026-03-27T13:58:10 IST" duration-ms="2262" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testDashboardCompleteFlow status=FAILURE method=Dashboard_Navigation_Tests.testDashboardCompleteFlow()[pri:2, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests@15de0b3c] output=  -> Starting Comprehensive Dashboard Verification...]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[  -> ❌ Test Case Failed: testDashboardCompleteFlow]]>
+            </line>
+            <line>
+              <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 10.778 SECONDS.]]>
             </line>
           </reporter-output>
         </test-method> <!-- getResult -->
       </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests -->
       <class name="RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests">
-        <test-method is-config="true" signature="setupSuite()[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests@4116aac9]" started-at="2026-03-25T11:28:34 IST" name="setupSuite" finished-at="2026-03-25T11:28:49 IST" duration-ms="15784" status="PASS">
+        <test-method is-config="true" signature="setupSuite()[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests@4116aac9]" started-at="2026-03-27T13:55:31 IST" name="setupSuite" finished-at="2026-03-27T13:55:44 IST" duration-ms="13141" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[
-⏳ APPIUM IS CLEANING DEVICE AND INSTALLING FRESH APK...]]>
+⚡ FAST BOOT: Launching App...]]>
             </line>
             <line>
-              <![CDATA[✅ APPIUM SESSION ESTABLISHED - STABILITY MODE ENGAGED!]]>
+              <![CDATA[✅ APPIUM SESSION ESTABLISHED - HYPER-SPEED MODE ENGAGED!]]>
             </line>
           </reporter-output>
         </test-method> <!-- setupSuite -->
-        <test-method is-config="true" signature="beforeTestLog(java.lang.reflect.Method)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests@4116aac9]" started-at="2026-03-25T11:28:49 IST" name="beforeTestLog" finished-at="2026-03-25T11:28:49 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="beforeTestLog(java.lang.reflect.Method)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests@4116aac9]" started-at="2026-03-27T13:55:44 IST" name="beforeTestLog" finished-at="2026-03-27T13:55:44 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1206,10 +1201,10 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestLog -->
-        <test-method signature="testLoginScreenFlow()[pri:1, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests@4116aac9]" started-at="2026-03-25T11:28:49 IST" name="testLoginScreenFlow" description="Comprehensive E2E Login Validation (Positive &amp; Negative Scenarios)" finished-at="2026-03-25T11:31:26 IST" duration-ms="156608" status="PASS">
+        <test-method signature="testLoginScreenFlow()[pri:1, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests@4116aac9]" started-at="2026-03-27T13:55:44 IST" name="testLoginScreenFlow" description="Comprehensive E2E Login Validation (Positive &amp; Negative Scenarios)" finished-at="2026-03-27T13:57:56 IST" duration-ms="132701" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[  -> Starting Comprehensive Login Suite for: 7661936911]]>
+              <![CDATA[  -> Starting Comprehensive Login Suite for: 7661935544]]>
             </line>
             <line>
               <![CDATA[  -> No permission popup detected.]]>
@@ -1239,37 +1234,43 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               <![CDATA[  -> Validating OTP Screen UI Elements...]]>
             </line>
             <line>
-              <![CDATA[  -> Change Number and Resend Code buttons are visible.]]>
+              <![CDATA[  -> OTP UI Elements missing or took too long to load.]]>
             </line>
             <line>
               <![CDATA[  -> Executing Negative Test: Invalid OTP]]>
             </line>
             <line>
+              <![CDATA[  -> Expected toast containing 'Invalid' did not appear or vanished too quickly.]]>
+            </line>
+            <line>
               <![CDATA[  -> Intercepting valid OTP via API...]]>
             </line>
             <line>
-              <![CDATA[  -> Retrieved OTP: 787078]]>
+              <![CDATA[  -> Retrieved OTP: 465560]]>
             </line>
             <line>
               <![CDATA[  -> Entering Valid OTP...]]>
             </line>
             <line>
-              <![CDATA[  -> Detecting landing screen...]]>
+              <![CDATA[  -> Waiting 4 seconds for Dashboard/Registration routing...]]>
+            </line>
+            <line>
+              <![CDATA[  -> Checking routing destination...]]>
             </line>
             <line>
               <![CDATA[  -> New User detected. Executing Registration Flow...]]>
             </line>
             <line>
-              <![CDATA[  -> Entering Data: vamshi krishna | vamshikrishna11@test.com | Delhi]]>
+              <![CDATA[  -> Entering Data: vamshi krishna | vamshikrishna101@test.com | Delhi]]>
             </line>
             <line>
-              <![CDATA[  -> Scrolling to reveal Registration options...]]>
-            </line>
-            <line>
-              <![CDATA[  -> Testing Gender Radio Buttons...]]>
+              <![CDATA[  -> Testing Gender Radio Buttons (Male -> Female)...]]>
             </line>
             <line>
               <![CDATA[  -> Successfully toggled Gender selection to Female.]]>
+            </line>
+            <line>
+              <![CDATA[  -> Preparing to click Register...]]>
             </line>
             <line>
               <![CDATA[  -> Submitting Registration Form...]]>
@@ -1279,11 +1280,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </line>
           </reporter-output>
         </test-method> <!-- testLoginScreenFlow -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests@4116aac9]" started-at="2026-03-25T11:31:26 IST" name="getResult" finished-at="2026-03-25T11:31:27 IST" duration-ms="1365" status="PASS">
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests@4116aac9]" started-at="2026-03-27T13:57:56 IST" name="getResult" finished-at="2026-03-27T13:57:57 IST" duration-ms="810" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testLoginScreenFlow status=SUCCESS method=Login_Screen_Tests.testLoginScreenFlow()[pri:1, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests@4116aac9] output=  -> Starting Comprehensive Login Suite for: 7661936911]]]>
+                <![CDATA[[TestResult name=testLoginScreenFlow status=SUCCESS method=Login_Screen_Tests.testLoginScreenFlow()[pri:1, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests@4116aac9] output=  -> Starting Comprehensive Login Suite for: 7661935544]]]>
               </value>
             </param>
           </params>
@@ -1292,20 +1293,20 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               <![CDATA[  -> ✅ Test Case Passed: testLoginScreenFlow]]>
             </line>
             <line>
-              <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 156.611 SECONDS.]]>
+              <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 132.703 SECONDS.]]>
             </line>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="tearDownSuite()[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests@4116aac9]" started-at="2026-03-25T11:39:37 IST" name="tearDownSuite" finished-at="2026-03-25T11:39:40 IST" duration-ms="3329" status="PASS">
+        <test-method is-config="true" signature="tearDownSuite()[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests@4116aac9]" started-at="2026-03-27T14:02:27 IST" name="tearDownSuite" finished-at="2026-03-27T14:02:29 IST" duration-ms="1506" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownSuite -->
       </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests -->
       <class name="RESEARCHMANTRA_AUTOMATION.AUTOMATION.All_Products_Payment_Flow_Tests">
-        <test-method signature="testAllProductsPaymentGatewayFlow()[pri:7, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.All_Products_Payment_Flow_Tests@489115ef]" started-at="2026-03-25T11:32:06 IST" name="testAllProductsPaymentGatewayFlow" description="Business Logic Flow: Discovery, Overview/Performance Tabs, Gateway, and Ledger" finished-at="2026-03-25T11:36:03 IST" duration-ms="236569" status="PASS">
+        <test-method signature="testAllProductsPaymentGatewayFlow()[pri:7, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.All_Products_Payment_Flow_Tests@3c9754d8]" started-at="2026-03-27T13:59:24 IST" name="testAllProductsPaymentGatewayFlow" description="Business Logic Flow: Discovery, Overview/Performance Tabs, Gateway, and Ledger" finished-at="2026-03-27T14:02:02 IST" duration-ms="157963" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[  -> Step 1: Navigating to Trades -> Home Tab.]]>
+              <![CDATA[  -> Step 1: Navigating to Trades Tab.]]>
             </line>
             <line>
               <![CDATA[  -> Step 2: Processing Product Cards sequentially...]]>
@@ -1317,10 +1318,40 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               <![CDATA[  -> 🧪 TESTING BUSINESS FLOW FOR: MCX Positional]]>
             </line>
             <line>
-              <![CDATA[  -> Testing Heart/Like Toggle...]]>
+              <![CDATA[  -> Clicking Product Card to open details...]]>
             </line>
             <line>
-              <![CDATA[  -> Heart icon not found for this card.]]>
+              <![CDATA[  -> Successfully navigated to Product Subscription Page.]]>
+            </line>
+            <line>
+              <![CDATA[  -> Verifying 'Overview' and 'Performance' Product Details Tabs...]]>
+            </line>
+            <line>
+              <![CDATA[  -> ✅ Overview and Performance tabs are active and switchable.]]>
+            </line>
+            <line>
+              <![CDATA[  -> Scrolling to evaluate Subscription Status...]]>
+            </line>
+            <line>
+              <![CDATA[  -> Product NOT OWNED. Proceeding to Gateway...]]>
+            </line>
+            <line>
+              <![CDATA[  -> Testing Payment Gateway Rebound...]]>
+            </line>
+            <line>
+              <![CDATA[  -> Returned from Gateway successfully.]]>
+            </line>
+            <line>
+              <![CDATA[  -> Applying Coupon: SUMMER100]]>
+            </line>
+            <line>
+              <![CDATA[  -> Coupon flow skipped/failed.]]>
+            </line>
+            <line>
+              <![CDATA[  -> ===============================================]]>
+            </line>
+            <line>
+              <![CDATA[  -> 🧪 TESTING BUSINESS FLOW FOR: Long term Goal Oriented]]>
             </line>
             <line>
               <![CDATA[  -> Clicking Product Card to open details...]]>
@@ -1335,12 +1366,6 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               <![CDATA[  -> 🧪 TESTING BUSINESS FLOW FOR: Nifty Positional]]>
             </line>
             <line>
-              <![CDATA[  -> Testing Heart/Like Toggle...]]>
-            </line>
-            <line>
-              <![CDATA[  -> Heart icon not found for this card.]]>
-            </line>
-            <line>
               <![CDATA[  -> Clicking Product Card to open details...]]>
             </line>
             <line>
@@ -1351,30 +1376,6 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </line>
             <line>
               <![CDATA[  -> 🧪 TESTING BUSINESS FLOW FOR: Midcap Positional]]>
-            </line>
-            <line>
-              <![CDATA[  -> Testing Heart/Like Toggle...]]>
-            </line>
-            <line>
-              <![CDATA[  -> Heart icon not found for this card.]]>
-            </line>
-            <line>
-              <![CDATA[  -> Clicking Product Card to open details...]]>
-            </line>
-            <line>
-              <![CDATA[  -> Could not route into card. Skipping to next.]]>
-            </line>
-            <line>
-              <![CDATA[  -> ===============================================]]>
-            </line>
-            <line>
-              <![CDATA[  -> 🧪 TESTING BUSINESS FLOW FOR: Long term Goal Oriented]]>
-            </line>
-            <line>
-              <![CDATA[  -> Testing Heart/Like Toggle...]]>
-            </line>
-            <line>
-              <![CDATA[  -> Heart icon not found for this card.]]>
             </line>
             <line>
               <![CDATA[  -> Clicking Product Card to open details...]]>
@@ -1393,7 +1394,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </line>
           </reporter-output>
         </test-method> <!-- testAllProductsPaymentGatewayFlow -->
-        <test-method is-config="true" signature="beforeTestLog(java.lang.reflect.Method)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.All_Products_Payment_Flow_Tests@489115ef]" started-at="2026-03-25T11:32:06 IST" name="beforeTestLog" finished-at="2026-03-25T11:32:06 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeTestLog(java.lang.reflect.Method)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.All_Products_Payment_Flow_Tests@3c9754d8]" started-at="2026-03-27T13:59:24 IST" name="beforeTestLog" finished-at="2026-03-27T13:59:24 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1414,11 +1415,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestLog -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.All_Products_Payment_Flow_Tests@489115ef]" started-at="2026-03-25T11:36:03 IST" name="getResult" finished-at="2026-03-25T11:36:04 IST" duration-ms="585" status="PASS">
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.All_Products_Payment_Flow_Tests@3c9754d8]" started-at="2026-03-27T14:02:02 IST" name="getResult" finished-at="2026-03-27T14:02:03 IST" duration-ms="899" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testAllProductsPaymentGatewayFlow status=SUCCESS method=All_Products_Payment_Flow_Tests.testAllProductsPaymentGatewayFlow()[pri:7, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.All_Products_Payment_Flow_Tests@489115ef] output=  -> Step 1: Navigating to Trades -> Home Tab.]]]>
+                <![CDATA[[TestResult name=testAllProductsPaymentGatewayFlow status=SUCCESS method=All_Products_Payment_Flow_Tests.testAllProductsPaymentGatewayFlow()[pri:7, instance:RESEARCHMANTRA_AUTOMATION.AUTOMATION.All_Products_Payment_Flow_Tests@3c9754d8] output=  -> Step 1: Navigating to Trades Tab.]]]>
               </value>
             </param>
           </params>
@@ -1427,11 +1428,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               <![CDATA[  -> ✅ Test Case Passed: testAllProductsPaymentGatewayFlow]]>
             </line>
             <line>
-              <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 236.57 SECONDS.]]>
+              <![CDATA[  -> ⏱️ SCREEN COMPLETED IN: 157.964 SECONDS.]]>
             </line>
           </reporter-output>
         </test-method> <!-- getResult -->
       </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.All_Products_Payment_Flow_Tests -->
-    </test> <!-- End-to-End Regression Test (New User Flow) -->
-  </suite> <!-- ResearchMantra Automation Suite -->
+    </test> <!-- E2E Flutter App Flow -->
+  </suite> <!-- ResearchMantra Master Suite -->
 </testng-results>

@@ -189,7 +189,9 @@ public class Trades_Screen_Tests extends Base_setup {
             } else if (hasData) {
                 logStep(Status.PASS, "✅ Product [" + productName + "] is PURCHASED. Active trade signals are visible!");
             } else {
-                logStep(Status.PASS, "Live Trades screen rendered successfully.");
+                // 🚀 APPLIED OPTIMIZATION: Fail the test if no known business state is detected
+                logStep(Status.FAIL, "❌ Product [" + productName + "] is in an UNKNOWN STATE! UI may be broken or loading failed.");
+                Assert.fail("Unknown business state for Live Trades product: " + productName);
             }
         } catch (Exception e) {
             logStep(Status.FAIL, "Live Trades UI is blank or unrecognizable.");

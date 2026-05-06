@@ -78,6 +78,8 @@ public class Dashboard_Navigation_Tests extends Base_setup {
             wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("Explore")));
             logStep(Status.INFO, "Returned to Dashboard from Notifications.");
 
+         // Inside Dashboard_Navigation_Tests.java -> replace Step 3 inside your test method
+
             // ==========================================
             // STEP 3: CATEGORY CARDS (MID-TOP)
             // ==========================================
@@ -93,14 +95,13 @@ public class Dashboard_Navigation_Tests extends Base_setup {
                         "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().descriptionContains(\"" + cat + "\"));"));
                 } catch (Exception e) {}
 
-                // 🚀 FIX: Replaced crash-inducing XPath with Native UiSelector
+                // 🚀 FLUTTER PROOF FIX: Removed strict ImageView requirement! Just look for the description.
                 if (!driver.findElements(AppiumBy.androidUIAutomator("new UiSelector().descriptionContains(\"" + cat + "\")")).isEmpty()) {
                     safeClick(driver, AppiumBy.androidUIAutomator("new UiSelector().descriptionContains(\"" + cat + "\")")); 
                     
                     try {
                         WebDriverWait routingWait = new WebDriverWait(driver, Duration.ofSeconds(5));
                         routingWait.pollingEvery(Duration.ofMillis(200));
-                        // 🚀 FIX: Lightning fast check for "Overview" tab instead of heavy OR statement
                         routingWait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.androidUIAutomator("new UiSelector().descriptionContains(\"Overview\")")));
                         logStep(Status.PASS, "✅ Successfully routed to Product Screen for: " + cat);
                     } catch (Exception e) {

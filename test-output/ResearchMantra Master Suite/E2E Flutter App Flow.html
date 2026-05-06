@@ -1,0 +1,494 @@
+<html>
+<head>
+<title>TestNG:  E2E Flutter App Flow</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>E2E Flutter App Flow</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>2/6/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Mar 27 13:55:44 IST 2026</td>
+</tr>
+<tr><td>Total time:</td><td>403 seconds (403289 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='RESEARCHMANTRA_AUTOMATION.AUTOMATION.Push_Notification_And_Signal_Tests.testLiveSignalRoutingAndNotifications()'><b>testLiveSignalRoutingAndNotifications</b><br>Test class: RESEARCHMANTRA_AUTOMATION.AUTOMATION.Push_Notification_And_Signal_Tests<br>Test method: Test In-App Notification Routing and Signal State Distribution<br/>
+<a href="#Output-1395098357" onClick='toggleBox("Output-1395098357", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1395098357" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1395098357">
+  -> Verifying Signal Distribution Logic.<br/>
+  -> Opening the first available product to check for Live Commentary...<br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: Failed to open product card to check signals. Clicks ignored by UI.
+	at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Push_Notification_And_Signal_Tests.testLiveSignalRoutingAndNotifications(Push_Notification_And_Signal_Tests.java:64)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1395098357", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1395098357'><pre>java.lang.AssertionError: Failed to open product card to check signals. Clicks ignored by UI.
+	at org.testng.Assert.fail(Assert.java:111)
+	at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Push_Notification_And_Signal_Tests.testLiveSignalRoutingAndNotifications(Push_Notification_And_Signal_Tests.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>22</td>
+<td>RESEARCHMANTRA_AUTOMATION.AUTOMATION.Push_Notification_And_Signal_Tests@3bf7ca37</td></tr>
+<tr>
+<td title='RESEARCHMANTRA_AUTOMATION.AUTOMATION.Tools_Screen_Tests.testToolsScreenFlow()'><b>testToolsScreenFlow</b><br>Test class: RESEARCHMANTRA_AUTOMATION.AUTOMATION.Tools_Screen_Tests<br>Test method: Verify Tools Tab UI and Open All Calculators (TC-075 to TC-085)<br/>
+<a href="#Output-1606542587" onClick='toggleBox("Output-1606542587", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1606542587" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1606542587">
+  -> Starting Tools Screen Verification.<br/>
+  -> Navigating to Tools Tab.<br/>
+  -> Tools Screen Test Failed: Expected condition failed: waiting for presence of element located by: By.xpath: //*[contains(@content-desc, 'Retirement Plans')] (tried for 12 second(s) with 100 milliseconds interval)<br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: Tools Screen Flow Failure: Expected condition failed: waiting for presence of element located by: By.xpath: //*[contains(@content-desc, &apos;Retirement Plans&apos;)] (tried for 12 second(s) with 100 milliseconds interval)
+	at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Tools_Screen_Tests.testToolsScreenFlow(Tools_Screen_Tests.java:93)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1606542587", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1606542587'><pre>java.lang.AssertionError: Tools Screen Flow Failure: Expected condition failed: waiting for presence of element located by: By.xpath: //*[contains(@content-desc, &apos;Retirement Plans&apos;)] (tried for 12 second(s) with 100 milliseconds interval)
+	at org.testng.Assert.fail(Assert.java:111)
+	at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Tools_Screen_Tests.testToolsScreenFlow(Tools_Screen_Tests.java:93)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>13</td>
+<td>RESEARCHMANTRA_AUTOMATION.AUTOMATION.Tools_Screen_Tests@198b6731</td></tr>
+<tr>
+<td title='RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests.testBlogsScreenFlow()'><b>testBlogsScreenFlow</b><br>Test class: RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests<br>Test method: Verify Blogs Tab, Feed, Like Toggle, and Subscription Create Logic<br/>
+<a href="#Output-859653366" onClick='toggleBox("Output-859653366", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-859653366" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-859653366">
+  -> Starting Blogs Screen Verification.<br/>
+  -> Navigating to Blogs Tab.<br/>
+  -> Step 1: Verifying Blog Card Content.<br/>
+  -> Could not find any Blog posts in the feed.<br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: Blog Feed is empty or failing to load.
+	at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests.testBlogsScreenFlow(Blogs_Screen_Tests.java:49)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace859653366", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace859653366'><pre>java.lang.AssertionError: Blog Feed is empty or failing to load.
+	at org.testng.Assert.fail(Assert.java:111)
+	at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests.testBlogsScreenFlow(Blogs_Screen_Tests.java:49)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>10</td>
+<td>RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests@3857f613</td></tr>
+<tr>
+<td title='RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests.testDynamicTradesScreenFlow()'><b>testDynamicTradesScreenFlow</b><br>Test class: RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests<br>Test method: Dynamically Verify All Products: Subscription States, Free Access Tabs, and Empty Data<br/>
+<a href="#Output-1693658782" onClick='toggleBox("Output-1693658782", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1693658782" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1693658782">
+  -> Starting Dynamic Trades Screen Verification.<br/>
+  -> Navigating to Trades Bottom Tab.<br/>
+  -> Step 1: Extracting dynamic product list from the app...<br/>
+  -> Dynamically found 3 products: [MCX Positional, Nifty Positional, Midcap Positional]<br/>
+  -> ===============================================<br/>
+  -> 🧪 TESTING PRODUCT: MCX Positional<br/>
+  -> -> Checking Home Tab for: MCX Positional<br/>
+  -> Found Home Service Card for: MCX Positional<br/>
+  -> -> Checking Live Trades Tab for: MCX Positional<br/>
+  ->    -> Verifying 'Details' Sub-Tab (Subscription Logic).<br/>
+  -> 🔒 Product [MCX Positional] is NOT PURCHASED. 'Activate Now' lock screen is correctly displayed.<br/>
+  ->    -> Verifying 'Live Commentary' Sub-Tab (Free Access).<br/>
+  -> ✅ Live Commentary feed loaded with free access data.<br/>
+  -> -> Checking Closed Trades Tab for: MCX Positional (Free Access)<br/>
+  -> ✅ Closed Trades (Booked Trades) loaded with free access data.<br/>
+  -> ✅ Full verification complete for: MCX Positional<br/>
+  -> ===============================================<br/>
+  -> 🧪 TESTING PRODUCT: Nifty Positional<br/>
+  -> -> Checking Home Tab for: Nifty Positional<br/>
+  -> Found Home Service Card for: Nifty Positional<br/>
+  -> -> Checking Live Trades Tab for: Nifty Positional<br/>
+  ->    -> Verifying 'Details' Sub-Tab (Subscription Logic).<br/>
+  -> 🔒 Product [Nifty Positional] is NOT PURCHASED. 'Activate Now' lock screen is correctly displayed.<br/>
+  ->    -> Verifying 'Live Commentary' Sub-Tab (Free Access).<br/>
+  -> ✅ Live Commentary feed loaded with free access data.<br/>
+  -> -> Checking Closed Trades Tab for: Nifty Positional (Free Access)<br/>
+  -> ✅ Closed Trades (Booked Trades) loaded with free access data.<br/>
+  -> ✅ Full verification complete for: Nifty Positional<br/>
+  -> ===============================================<br/>
+  -> 🧪 TESTING PRODUCT: Midcap Positional<br/>
+  -> -> Checking Home Tab for: Midcap Positional<br/>
+  -> Found Home Service Card for: Midcap Positional<br/>
+  -> -> Checking Live Trades Tab for: Midcap Positional<br/>
+  ->    -> Verifying 'Details' Sub-Tab (Subscription Logic).<br/>
+  -> 🔒 Product [Midcap Positional] is NOT PURCHASED. 'Activate Now' lock screen is correctly displayed.<br/>
+  ->    -> Verifying 'Live Commentary' Sub-Tab (Free Access).<br/>
+  -> ✅ Live Commentary feed loaded with free access data.<br/>
+  -> -> Checking Closed Trades Tab for: Midcap Positional (Free Access)<br/>
+  -> Closed Trades UI had issues rendering.<br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: Closed Trades UI check failed.
+	at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests.verifyClosedTradeDetails(Trades_Screen_Tests.java:238)
+	at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests.testDynamicTradesScreenFlow(Trades_Screen_Tests.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1693658782", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1693658782'><pre>java.lang.AssertionError: Closed Trades UI check failed.
+	at org.testng.Assert.fail(Assert.java:111)
+	at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests.verifyClosedTradeDetails(Trades_Screen_Tests.java:238)
+	at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests.testDynamicTradesScreenFlow(Trades_Screen_Tests.java:90)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>32</td>
+<td>RESEARCHMANTRA_AUTOMATION.AUTOMATION.Trades_Screen_Tests@489115ef</td></tr>
+<tr>
+<td title='RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests.testDashboardCompleteFlow()'><b>testDashboardCompleteFlow</b><br>Test class: RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests<br>Test method: Comprehensive E2E Dashboard Flow: Header, Notifications, Cards, Analytics, and Nav<br/>
+<a href="#Output-438432831" onClick='toggleBox("Output-438432831", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-438432831" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-438432831">
+  -> Starting Comprehensive Dashboard Verification...<br/>
+  -> Step 1: Checking User Profile Name in Header.<br/>
+  -> Profile Name verified in header: vamshi krishna<br/>
+  -> Step 2: Checking Notification Bell & Tabs.<br/>
+  -> Clicked Notification Bell successfully.<br/>
+  -> Successfully interacted with all Notification tabs.<br/>
+  -> Returned to Dashboard from Notifications.<br/>
+  -> Step 3: Deep Clicking Core Trade Category Cards.<br/>
+  -> Testing Routing for: MCX Positional<br/>
+  -> ❌ Routing failed for: MCX Positional<br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: Routing failed for product card: MCX Positional
+	at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests.testDashboardCompleteFlow(Dashboard_Navigation_Tests.java:108)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace438432831", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace438432831'><pre>java.lang.AssertionError: Routing failed for product card: MCX Positional
+	at org.testng.Assert.fail(Assert.java:111)
+	at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests.testDashboardCompleteFlow(Dashboard_Navigation_Tests.java:108)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>10</td>
+<td>RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests@15de0b3c</td></tr>
+<tr>
+<td title='RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests.testProfileAndSettingsFlow()'><b>testProfileAndSettingsFlow</b><br>Test class: RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests<br>Test method: Comprehensive Profile, Deep Clicks, Chrome Intents, and Settings Flow<br/>
+<a href="#Output-476238509" onClick='toggleBox("Output-476238509", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-476238509" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-476238509">
+  -> Starting Profile & Settings Verification.<br/>
+  -> Step 1: Navigating to Profile Tab.<br/>
+  -> Profile Main Landing UI loaded.<br/>
+  -> Step 2: Testing Personal Details Update logic.<br/>
+  -> Profile & Settings Flow Failed: Expected condition failed: waiting for presence of element located by: AppiumBy.accessibilityId: Update (tried for 12 second(s) with 100 milliseconds interval)<br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: Expected condition failed: waiting for presence of element located by: AppiumBy.accessibilityId: Update (tried for 12 second(s) with 100 milliseconds interval)
+	at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests.testProfileAndSettingsFlow(Profile_And_Settings_Tests.java:141)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace476238509", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace476238509'><pre>java.lang.AssertionError: Expected condition failed: waiting for presence of element located by: AppiumBy.accessibilityId: Update (tried for 12 second(s) with 100 milliseconds interval)
+	at org.testng.Assert.fail(Assert.java:111)
+	at RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests.testProfileAndSettingsFlow(Profile_And_Settings_Tests.java:141)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>13</td>
+<td>RESEARCHMANTRA_AUTOMATION.AUTOMATION.Profile_And_Settings_Tests@7c6908d7</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='RESEARCHMANTRA_AUTOMATION.AUTOMATION.All_Products_Payment_Flow_Tests.testAllProductsPaymentGatewayFlow()'><b>testAllProductsPaymentGatewayFlow</b><br>Test class: RESEARCHMANTRA_AUTOMATION.AUTOMATION.All_Products_Payment_Flow_Tests<br>Test method: Business Logic Flow: Discovery, Overview/Performance Tabs, Gateway, and Ledger<br/>
+<a href="#Output-518017014" onClick='toggleBox("Output-518017014", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-518017014" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-518017014">
+  -> Step 1: Navigating to Trades Tab.<br/>
+  -> Step 2: Processing Product Cards sequentially...<br/>
+  -> ===============================================<br/>
+  -> 🧪 TESTING BUSINESS FLOW FOR: MCX Positional<br/>
+  -> Clicking Product Card to open details...<br/>
+  -> Successfully navigated to Product Subscription Page.<br/>
+  -> Verifying 'Overview' and 'Performance' Product Details Tabs...<br/>
+  -> ✅ Overview and Performance tabs are active and switchable.<br/>
+  -> Scrolling to evaluate Subscription Status...<br/>
+  -> Product NOT OWNED. Proceeding to Gateway...<br/>
+  -> Testing Payment Gateway Rebound...<br/>
+  -> Returned from Gateway successfully.<br/>
+  -> Applying Coupon: SUMMER100<br/>
+  -> Coupon flow skipped/failed.<br/>
+  -> ===============================================<br/>
+  -> 🧪 TESTING BUSINESS FLOW FOR: Long term Goal Oriented<br/>
+  -> Clicking Product Card to open details...<br/>
+  -> Could not route into card. Skipping to next.<br/>
+  -> ===============================================<br/>
+  -> 🧪 TESTING BUSINESS FLOW FOR: Nifty Positional<br/>
+  -> Clicking Product Card to open details...<br/>
+  -> Could not route into card. Skipping to next.<br/>
+  -> ===============================================<br/>
+  -> 🧪 TESTING BUSINESS FLOW FOR: Midcap Positional<br/>
+  -> Clicking Product Card to open details...<br/>
+  -> Could not route into card. Skipping to next.<br/>
+  -> ===============================================<br/>
+  -> Step 3: Verifying Ledger in 'My Collection'<br/>
+  -> No new products purchased. Skipping Collection verification.<br/>
+</div>
+</td>
+<td></td>
+<td>157</td>
+<td>RESEARCHMANTRA_AUTOMATION.AUTOMATION.All_Products_Payment_Flow_Tests@3c9754d8</td></tr>
+<tr>
+<td title='RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests.testLoginScreenFlow()'><b>testLoginScreenFlow</b><br>Test class: RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests<br>Test method: Comprehensive E2E Login Validation (Positive & Negative Scenarios)<br/>
+<a href="#Output-480498267" onClick='toggleBox("Output-480498267", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-480498267" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-480498267">
+  -> Starting Comprehensive Login Suite for: 7661935544<br/>
+  -> No permission popup detected.<br/>
+  -> Executing Negative Test: Empty Mobile Number<br/>
+  -> Verified Toast Message: Please enter valid mobile number<br/>
+  -> Executing Negative Test: Invalid Mobile Number (12345)<br/>
+  -> Verified Toast Message: Please enter valid mobile number<br/>
+  -> Executing Positive Test: Valid Mobile Number<br/>
+  -> Waiting for transition to OTP screen...<br/>
+  -> Successfully arrived at OTP Verification Screen.<br/>
+  -> Validating OTP Screen UI Elements...<br/>
+  -> OTP UI Elements missing or took too long to load.<br/>
+  -> Executing Negative Test: Invalid OTP<br/>
+  -> Expected toast containing 'Invalid' did not appear or vanished too quickly.<br/>
+  -> Intercepting valid OTP via API...<br/>
+  -> Retrieved OTP: 465560<br/>
+  -> Entering Valid OTP...<br/>
+  -> Waiting 4 seconds for Dashboard/Registration routing...<br/>
+  -> Checking routing destination...<br/>
+  -> New User detected. Executing Registration Flow...<br/>
+  -> Entering Data: vamshi krishna | vamshikrishna101@test.com | Delhi<br/>
+  -> Testing Gender Radio Buttons (Male -> Female)...<br/>
+  -> Successfully toggled Gender selection to Female.<br/>
+  -> Preparing to click Register...<br/>
+  -> Submitting Registration Form...<br/>
+  -> ✅ Login Flow Complete! Logged in as: vamshi krishna<br/>
+</div>
+</td>
+<td></td>
+<td>132</td>
+<td>RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests@4116aac9</td></tr>
+</table><p>
+</body>
+</html>

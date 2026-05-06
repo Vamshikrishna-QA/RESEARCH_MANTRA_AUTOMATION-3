@@ -30,6 +30,24 @@
           <include name="testToolsScreenFlow"/>
         </methods>
       </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.Tools_Screen_Tests -->
+      <class name="RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests">
+        <methods>
+          <include name="setupSuite"/>
+          <include name="beforeTestLog"/>
+          <include name="getResult"/>
+          <include name="tearDownSuite"/>
+          <include name="testDashboardCompleteFlow"/>
+        </methods>
+      </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.Dashboard_Navigation_Tests -->
+      <class name="RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests">
+        <methods>
+          <include name="testLoginScreenFlow"/>
+          <include name="setupSuite"/>
+          <include name="beforeTestLog"/>
+          <include name="getResult"/>
+          <include name="tearDownSuite"/>
+        </methods>
+      </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.Login_Screen_Tests -->
       <class name="RESEARCHMANTRA_AUTOMATION.AUTOMATION.Push_Notification_And_Signal_Tests">
         <methods>
           <include name="setupSuite"/>
@@ -48,6 +66,15 @@
           <include name="tearDownSuite"/>
         </methods>
       </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.Blogs_Screen_Tests -->
+      <class name="RESEARCHMANTRA_AUTOMATION.AUTOMATION.All_Products_Payment_Flow_Tests">
+        <methods>
+          <include name="setupSuite"/>
+          <include name="testAllProductsPaymentGatewayFlow"/>
+          <include name="beforeTestLog"/>
+          <include name="getResult"/>
+          <include name="tearDownSuite"/>
+        </methods>
+      </class> <!-- RESEARCHMANTRA_AUTOMATION.AUTOMATION.All_Products_Payment_Flow_Tests -->
     </classes>
   </test> <!-- End-to-End Regression Test (New User Flow)(failed) -->
 </suite> <!-- Failed suite [ResearchMantra Automation Suite] -->

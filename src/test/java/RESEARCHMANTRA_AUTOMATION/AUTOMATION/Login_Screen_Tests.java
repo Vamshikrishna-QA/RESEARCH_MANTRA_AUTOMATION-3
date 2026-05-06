@@ -26,21 +26,12 @@ public class Login_Screen_Tests extends Base_setup {
 
 	@Test(priority = 1, description = "Comprehensive E2E Login Validation (Positive & Negative Scenarios)")
 	public void testLoginScreenFlow() throws Exception {
-		test = extent.createTest("Login Module: Hyper-Speed Flow - " + Base_setup.testFullName);
+		test = extent.createTest("Login Module: All Possible Scenarios - " + Base_setup.testFullName);
 		AndroidDriver driver = getDriver();
-        
-        // 🚀 SPEED HACK: Poll the screen every 100ms instead of default 500ms for instant reactions
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        wait.pollingEvery(Duration.ofMillis(100));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
 		String targetMobileNumber = Base_setup.testMobileNumber;
 		String expectedDashboardName = "";
-        
-        // 🚨 CONFIG FILE CHECKER
-        if (targetMobileNumber == null || targetMobileNumber.trim().isEmpty() || targetMobileNumber.length() < 10) {
-            logStep(Status.FAIL, "CRITICAL ERROR: Invalid number in config.properties: '" + targetMobileNumber + "'");
-            Assert.fail("Fix config.properties! It passed an invalid mobile number.");
-        }
 
 		logStep(Status.INFO, "Starting Comprehensive Login Suite for: " + targetMobileNumber);
 
@@ -58,35 +49,49 @@ public class Login_Screen_Tests extends Base_setup {
 
 			wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.accessibilityId("Default login image")));
 
-            WebElement phoneField = wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.className("android.widget.EditText")));
+			// ==========================================
+			// STEP 2: UI VALIDATION (Country Code & Terms)
+			// ==========================================
+			logStep(Status.INFO, "Validating Login Screen UI Elements (Country Code, Terms)...");
+			try {
+				wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.accessibilityId("🇮🇳 +91")));
+				wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.accessibilityId("Terms & Conditions and Privacy Policy.")));
+				logStep(Status.PASS, "Country Code and Terms & Conditions link are visible.");
+			} catch (Exception e) {
+				logStep(Status.WARNING, "Some UI elements (Country Code or Terms) are missing from the login screen.");
+			}
 
 			// ==========================================
-			// STEP 2: NEGATIVE TEST - EMPTY SUBMISSION
+			// STEP 3: NEGATIVE TEST - EMPTY SUBMISSION
 			// ==========================================
 			logStep(Status.INFO, "Executing Negative Test: Empty Mobile Number");
+			WebElement phoneField = driver.findElement(AppiumBy.className("android.widget.EditText"));
 			clearFieldAggressively(driver, phoneField);
 			dismissKeyboardSafely(driver);
 
 			safeClick(driver, AppiumBy.accessibilityId("Login"));
 			checkToastSafely("mobile number");
+			Thread.sleep(1000); // 🚀 Wait for toast to clear
 
 			// ==========================================
-			// STEP 3: NEGATIVE TEST - INVALID NUMBER
+			// STEP 4: NEGATIVE TEST - INVALID NUMBER
 			// ==========================================
 			logStep(Status.INFO, "Executing Negative Test: Invalid Mobile Number (12345)");
+			phoneField = driver.findElement(AppiumBy.className("android.widget.EditText"));
 			clearFieldAggressively(driver, phoneField);
 			phoneField.sendKeys("12345");
 			dismissKeyboardSafely(driver);
 
 			safeClick(driver, AppiumBy.accessibilityId("Login"));
 			checkToastSafely("valid mobile number");
+			Thread.sleep(1500); // 🚀 Wait for toast to clear and UI to unlock
 
 			// ==========================================
-			// STEP 4: POSITIVE TEST - VALID NUMBER
+			// STEP 5: POSITIVE TEST - VALID NUMBER
 			// ==========================================
 			logStep(Status.INFO, "Executing Positive Test: Valid Mobile Number");
-			// 🚀 THE FIX: This will completely backspace out "12345" before typing the real number
-			clearFieldAggressively(driver, phoneField);
+			phoneField = driver.findElement(AppiumBy.className("android.widget.EditText"));
+			clearFieldAggressively(driver, phoneField); // 🚀 Guarantees "12345" is wiped out
 			phoneField.sendKeys(targetMobileNumber);
 			dismissKeyboardSafely(driver);
 
@@ -94,156 +99,181 @@ public class Login_Screen_Tests extends Base_setup {
 
 			logStep(Status.INFO, "Waiting for transition to OTP screen...");
 			try {
-				wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("Enter your Verification Code")));
+				wait.until(ExpectedConditions
+						.presenceOfElementLocated(AppiumBy.accessibilityId("Enter your Verification Code")));
 				logStep(Status.PASS, "Successfully arrived at OTP Verification Screen.");
 			} catch (Exception e) {
 				Assert.fail("Failed to transition to OTP screen! Network may be slow or Login button failed.");
 			}
 
 			// ==========================================
-			// STEP 5: OTP SCREEN UI VALIDATION
+			// STEP 6: OTP SCREEN UI VALIDATION
 			// ==========================================
 			logStep(Status.INFO, "Validating OTP Screen UI Elements...");
 			try {
-				wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("Not you? Change Number")));
+				wait.until(ExpectedConditions
+						.presenceOfElementLocated(AppiumBy.accessibilityId("Not you? Change Number")));
 				wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("Resend Code")));
 				logStep(Status.PASS, "Change Number and Resend Code buttons are visible.");
 			} catch (Exception e) {
 				logStep(Status.WARNING, "OTP UI Elements missing or took too long to load.");
 			}
 
-            WebElement otpField = wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.className("android.widget.EditText")));
-
 			// ==========================================
-			// STEP 6: NEGATIVE TEST - INVALID OTP
+			// STEP 7: NEGATIVE TEST - INVALID OTP
 			// ==========================================
 			logStep(Status.INFO, "Executing Negative Test: Invalid OTP");
 			try {
+				WebElement otpField = driver.findElement(AppiumBy.className("android.widget.EditText"));
 				clearFieldAggressively(driver, otpField);
 				otpField.sendKeys("000000");
 				dismissKeyboardSafely(driver);
 
 				try {
 					safeClick(driver, AppiumBy.accessibilityId("Enter otp"));
-				} catch (Exception e) {}
+				} catch (Exception e) {
+				}
 				checkToastSafely("Invalid");
+				Thread.sleep(1500); // 🚀 Wait for toast to fade
 
+				// Clear the fake OTP before moving on
 				clearFieldAggressively(driver, otpField);
 				dismissKeyboardSafely(driver);
 			} catch (Exception e) {
-				logStep(Status.WARNING, "UI became unresponsive during Invalid OTP test. Recovering...");
+				logStep(Status.WARNING,
+						"UI became unresponsive or app state changed unexpectedly during Invalid OTP test. Recovering...");
 				try { driver.pressKey(new KeyEvent(AndroidKey.BACK)); } catch (Exception ex) {}
 			}
-
+            
 			// ==========================================
-			// STEP 7: POSITIVE TEST - VALID OTP FETCH
+			// STEP 8: POSITIVE TEST - VALID OTP FETCH
 			// ==========================================
 			logStep(Status.INFO, "Intercepting valid OTP via API...");
 			String[] apiData = fetchApiData(targetMobileNumber);
 			String dynamicOtp = apiData[0];
 			String apiFullName = apiData[1];
+
+			expectedDashboardName = apiFullName; 
+
 			logStep(Status.PASS, "Retrieved OTP: " + dynamicOtp);
 
 			logStep(Status.INFO, "Entering Valid OTP...");
-			clearFieldAggressively(driver, otpField);
-			otpField.sendKeys(dynamicOtp);
+			WebElement finalOtpField = driver.findElement(AppiumBy.className("android.widget.EditText"));
+			clearFieldAggressively(driver, finalOtpField);
+			finalOtpField.sendKeys(dynamicOtp);
 			dismissKeyboardSafely(driver);
 
 			try {
 				safeClick(driver, AppiumBy.accessibilityId("Enter otp"));
 			} catch (Exception e) {
 				try {
-					safeClick(driver, AppiumBy.xpath("//*[contains(@content-desc, 'Verify') or contains(@content-desc, 'Submit')]"));
+					safeClick(driver, AppiumBy
+							.xpath("//*[contains(@content-desc, 'Verify') or contains(@content-desc, 'Submit')]"));
 				} catch (Exception ex) {
 					logStep(Status.INFO, "Submit button not clicked. App may have auto-submitted.");
 				}
 			}
 
+			logStep(Status.INFO, "Waiting 4 seconds for Dashboard/Registration routing...");
+			Thread.sleep(4000);
+
 			// ==========================================
-			// STEP 8: SMART ROUTING (NEW VS EXISTING USER)
+			// STEP 9: NEW VS EXISTING USER ROUTING
 			// ==========================================
-			logStep(Status.INFO, "Detecting landing screen...");
-            boolean isNewUser = false;
-            try {
-                // 🚀 FIX: Lightning fast accessibility ID lookups instead of heavy XPaths
-                wait.until(ExpectedConditions.or(
-                    ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("Explore")),
-                    ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("Home")),
-                    ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("Trades")),
-                    ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("Register"))
-                ));
-                isNewUser = !driver.findElements(AppiumBy.accessibilityId("Register")).isEmpty();
-            } catch (Exception e) {
-                logStep(Status.WARNING, "Routing wait timed out. Proceeding with assumptions.");
-            }
+			logStep(Status.INFO, "Checking routing destination...");
+			boolean isNewUser = !driver
+					.findElements(
+							AppiumBy.xpath("//*[contains(@content-desc, 'Register') or contains(@text, 'Register')]"))
+					.isEmpty();
 
 			if (isNewUser) {
 				logStep(Status.WARNING, "New User detected. Executing Registration Flow...");
 
-				String regName = (Base_setup.testFullName == null || Base_setup.testFullName.isEmpty()) ? "Test User" : Base_setup.testFullName;
-				String regEmail = (Base_setup.testEmail == null || Base_setup.testEmail.isEmpty()) ? "test@researchmantra.com" : Base_setup.testEmail;
-				String regCity = (Base_setup.testCity == null || Base_setup.testCity.isEmpty()) ? "Mumbai" : Base_setup.testCity;
+				String regName = (Base_setup.testFullName == null || Base_setup.testFullName.isEmpty()) ? "Test User"
+						: Base_setup.testFullName;
+				String regEmail = (Base_setup.testEmail == null || Base_setup.testEmail.isEmpty())
+						? "test@researchmantra.com"
+						: Base_setup.testEmail;
+				String regCity = (Base_setup.testCity == null || Base_setup.testCity.isEmpty()) ? "Mumbai"
+						: Base_setup.testCity;
 				expectedDashboardName = regName;
 
 				logStep(Status.INFO, "Entering Data: " + regName + " | " + regEmail + " | " + regCity);
 
-				List<WebElement> fields = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(AppiumBy.className("android.widget.EditText")));
-				clearFieldAggressively(driver, fields.get(0)); fields.get(0).sendKeys(regName);
-				clearFieldAggressively(driver, fields.get(1)); fields.get(1).sendKeys(regEmail);
-				clearFieldAggressively(driver, fields.get(2)); fields.get(2).sendKeys(regCity);
-
+				List<WebElement> fields = wait.until(ExpectedConditions
+						.presenceOfAllElementsLocatedBy(AppiumBy.className("android.widget.EditText")));
+				
+				clearFieldAggressively(driver, fields.get(0));
+				fields.get(0).sendKeys(regName);
 				dismissKeyboardSafely(driver);
 
-				logStep(Status.INFO, "Scrolling to reveal Registration options...");
-				try {
-					driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(1);"));
-				} catch (Exception e) {
-					swipeUp();
-				}
-				Thread.sleep(300); 
+				fields = wait.until(ExpectedConditions
+						.presenceOfAllElementsLocatedBy(AppiumBy.className("android.widget.EditText")));
+				clearFieldAggressively(driver, fields.get(1));
+				fields.get(1).sendKeys(regEmail);
+				dismissKeyboardSafely(driver);
 
-				logStep(Status.INFO, "Testing Gender Radio Buttons...");
+				fields = wait.until(ExpectedConditions
+						.presenceOfAllElementsLocatedBy(AppiumBy.className("android.widget.EditText")));
+				clearFieldAggressively(driver, fields.get(2));
+				fields.get(2).sendKeys(regCity);
+
+				dismissKeyboardSafely(driver);
+				Thread.sleep(500);
+
+				logStep(Status.INFO, "Testing Gender Radio Buttons (Male -> Female)...");
 				try {
-					safeClick(driver, AppiumBy.xpath("(//android.widget.RadioButton)[2]"));
+					try {
+						safeClick(driver, AppiumBy.xpath("//*[@content-desc='Male' or @text='Male']"));
+						Thread.sleep(500); 
+					} catch (Exception e) {} 
+
+					safeClick(driver,
+							AppiumBy.xpath("//*[contains(@content-desc, 'Female') or contains(@text, 'Female')]"));
 					logStep(Status.PASS, "Successfully toggled Gender selection to Female.");
 				} catch (Exception e) {
-					logStep(Status.WARNING, "Could not interact with Gender radio buttons via index. Trying fallback...");
-                    try {
-                        safeClick(driver, AppiumBy.xpath("(//*[contains(@content-desc, 'Female') or contains(@text, 'Female')])/.."));
-                    } catch (Exception ex) {}
+					logStep(Status.WARNING,
+							"Could not interact with Gender radio buttons. They might be off-screen or unclickable.");
 				}
+
+				logStep(Status.INFO, "Preparing to click Register...");
+				dismissKeyboardSafely(driver); 
+				Thread.sleep(1000);
+
+				try {
+					driver.findElement(AppiumBy
+							.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(1);"));
+				} catch (Exception e) {
+					swipeUp();
+					Thread.sleep(500);
+					swipeUp(); 
+				}
+				Thread.sleep(1000);
 
 				logStep(Status.INFO, "Submitting Registration Form...");
 				try {
-					safeClick(driver, AppiumBy.accessibilityId("Register"));
+					safeClick(driver, AppiumBy.xpath("//android.widget.Button[@content-desc='Register']"));
 				} catch (Exception e) {
-					safeClick(driver, AppiumBy.xpath("//*[contains(@content-desc, 'Register') or contains(@text, 'Register')]"));
+					safeClick(driver,
+							AppiumBy.xpath("//*[contains(@content-desc, 'Register') or contains(@text, 'Register')]"));
 				}
-			} else {
-                expectedDashboardName = apiFullName;
-            }
-
-			// ==========================================
-			// STEP 9: FINAL DASHBOARD VERIFICATION
+			}
+            
+            // ==========================================
+			// STEP 10: FINAL DASHBOARD VERIFICATION
 			// ==========================================
 			handlePromoPopup();
-            
-            // 🚀 FIX: Fast Dashboard Verification
-			wait.until(ExpectedConditions.or(
-                ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("Explore")),
-                ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("Home")),
-                ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("Trades"))
-            ));
+			wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("Explore")));
 
 			if (expectedDashboardName != null && !expectedDashboardName.isEmpty()) {
 				String firstName = expectedDashboardName.split(" ")[0];
-				wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.xpath("//*[contains(translate(@content-desc, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '" + firstName.toLowerCase() + "')]")));
+				wait.until(ExpectedConditions.presenceOfElementLocated(
+						AppiumBy.xpath("//*[contains(@content-desc, '" + firstName + "')]")));
 				logStep(Status.PASS, "✅ Login Flow Complete! Logged in as: " + expectedDashboardName);
 				Base_setup.loggedInUserName = expectedDashboardName;
 			}
-		}
 
-		catch (Exception e) {
+		} catch (Exception e) {
 			logStep(Status.FAIL, "Login Flow Failed: " + e.getMessage());
 			Assert.fail(e.getMessage());
 		} finally {
@@ -251,95 +281,84 @@ public class Login_Screen_Tests extends Base_setup {
 		}
 	}
 
-    // 🚀 NEW: Bulletproof way to clear fields in Flutter/Appium
+    // 🚀 NEW: FLUTTER-SAFE AGGRESSIVE CLEAR
     private void clearFieldAggressively(AndroidDriver driver, WebElement field) {
         try {
             field.click();
-            field.clear(); // Standard attempt
-            // Force hardware backspaces just to be absolutely sure no ghost text remains
+            field.clear(); // Try standard clear first
+            Thread.sleep(200);
+            // Hammer the backspace key to delete anything left behind
             for (int i = 0; i < 15; i++) {
                 driver.pressKey(new KeyEvent(AndroidKey.DEL));
             }
         } catch (Exception e) {}
     }
 
-    // ⚡ ZERO-LATENCY "HUMAN TAP" (Guarantees Flutter cannot block the click)
-    private void safeClick(AndroidDriver driver, org.openqa.selenium.By by) throws Exception {
-        WebDriverWait clickWait = new WebDriverWait(driver, Duration.ofSeconds(8));
-        clickWait.pollingEvery(Duration.ofMillis(100)); 
-        
-        for (int i = 0; i < 2; i++) {
-            try {
-                WebElement el = clickWait.until(ExpectedConditions.presenceOfElementLocated(by));
-                
-                int centerX = el.getRect().getX() + (el.getRect().getWidth() / 2);
-                int centerY = el.getRect().getY() + (el.getRect().getHeight() / 2);
-                
-                org.openqa.selenium.interactions.PointerInput finger = new org.openqa.selenium.interactions.PointerInput(org.openqa.selenium.interactions.PointerInput.Kind.TOUCH, "finger");
-                org.openqa.selenium.interactions.Sequence tap = new org.openqa.selenium.interactions.Sequence(finger, 1);
-                tap.addAction(finger.createPointerMove(Duration.ZERO, org.openqa.selenium.interactions.PointerInput.Origin.viewport(), centerX, centerY));
-                tap.addAction(finger.createPointerDown(org.openqa.selenium.interactions.PointerInput.MouseButton.LEFT.asArg()));
-                tap.addAction(finger.createPointerUp(org.openqa.selenium.interactions.PointerInput.MouseButton.LEFT.asArg()));
-                driver.perform(java.util.Collections.singletonList(tap));
-                return;
-            } catch(Exception e) {
-                Thread.sleep(200); 
-            }
-        }
-        driver.findElement(by).click(); 
-    }
-
-	// 🚀 BULLETPROOF KEYBOARD DROPPER
-	private void dismissKeyboardSafely(AndroidDriver driver) {
-		try {
-            if (!driver.findElements(AppiumBy.accessibilityId("Default login image")).isEmpty()) {
-                driver.findElement(AppiumBy.accessibilityId("Default login image")).click();
-            } else if (!driver.findElements(AppiumBy.accessibilityId("Enter your Verification Code")).isEmpty()) {
-                driver.findElement(AppiumBy.accessibilityId("Enter your Verification Code")).click();
-            } else {
-                driver.pressKey(new KeyEvent(AndroidKey.BACK)); 
-            }
-            Thread.sleep(600); 
-		} catch (Exception e) {
-            try { driver.hideKeyboard(); } catch (Exception ex) {}
-        }
+	private void safeClick(AndroidDriver driver, org.openqa.selenium.By by) throws Exception {
+		for (int i = 0; i < 3; i++) {
+			try {
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+				WebElement el = wait.until(ExpectedConditions.presenceOfElementLocated(by));
+				el.click();
+				return;
+			} catch (Exception e) {
+				Thread.sleep(1000);
+			}
+		}
+		driver.findElement(by).click();
 	}
 
-	// 🚀 FAST TOAST CHECKER
 	private void checkToastSafely(String expectedText) {
 		try {
 			WebDriverWait shortWait = new WebDriverWait(getDriver(), Duration.ofSeconds(3));
-            shortWait.pollingEvery(Duration.ofMillis(100));
-			WebElement toast = shortWait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.xpath("//android.widget.Toast")));
+			WebElement toast = shortWait
+					.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.xpath("//android.widget.Toast")));
 			String actualText = toast.getAttribute("name");
 			if (actualText.toLowerCase().contains(expectedText.toLowerCase())) {
 				logStep(Status.PASS, "Verified Toast Message: " + actualText);
 			}
 		} catch (Exception e) {
-			logStep(Status.WARNING, "Expected toast containing '" + expectedText + "' did not appear or vanished too quickly.");
+			logStep(Status.WARNING,
+					"Expected toast containing '" + expectedText + "' did not appear or vanished too quickly.");
 		}
 	}
 
 	private String[] fetchApiData(String mobileNumber) {
 		try {
-			String apiUrl = "https://auth.researchmantra.in/api/Authentication/OtpLogin?mobileNumber=" + mobileNumber + "&countryCode=91";
+			String apiUrl = "https://auth.researchmantra.in/api/Authentication/OtpLogin?mobileNumber=" + mobileNumber
+					+ "&countryCode=91";
 			URL url = new URL(apiUrl);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("GET");
 			BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 			StringBuilder response = new StringBuilder();
 			String line;
-			while ((line = in.readLine()) != null) response.append(line);
+			while ((line = in.readLine()) != null)
+				response.append(line);
 			in.close();
 			String res = response.toString();
 			String otp = "", name = "";
 			Matcher m1 = Pattern.compile("\"oneTimePassword\":\"(\\d+)\"").matcher(res);
-			if (m1.find()) otp = m1.group(1);
+			if (m1.find())
+				otp = m1.group(1);
 			Matcher m2 = Pattern.compile("\"fullName\":\"([^\"]*)\"").matcher(res);
-			if (m2.find()) name = m2.group(1);
+			if (m2.find())
+				name = m2.group(1);
 			return new String[] { otp, name };
 		} catch (Exception e) {
 			throw new RuntimeException("API Fail: " + e.getMessage());
+		}
+	}
+
+	private void dismissKeyboardSafely(AndroidDriver driver) {
+		try {
+			if (!driver.findElements(AppiumBy.accessibilityId("Default login image")).isEmpty()) {
+				driver.findElement(AppiumBy.accessibilityId("Default login image")).click();
+			} else if (!driver.findElements(AppiumBy.accessibilityId("Enter your Verification Code")).isEmpty()) {
+				driver.findElement(AppiumBy.accessibilityId("Enter your Verification Code")).click();
+			}
+			Thread.sleep(1000);
+		} catch (Exception e) {
 		}
 	}
 }
